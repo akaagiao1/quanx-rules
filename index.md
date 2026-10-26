@@ -1,0 +1,14 @@
+# QuanX 全量分类目录
+
+上游快照：`d6a46777aa9438e4f718fdbbc0e42768a3dc62ea`
+
+所有文件默认策略为 `proxy`；订阅时用 `force-policy` 指定自己的策略组。
+partial 表示含无法转换的域名正则；unsupported-only 和 empty 不提供空订阅。
+
+| 分类组 | 分类数 | 目录 |
+| --- | ---: | --- |
+| asn | 82,283 | [1](indexes/asn/0001.md) · [2](indexes/asn/0002.md) · [3](indexes/asn/0003.md) · [4](indexes/asn/0004.md) · [5](indexes/asn/0005.md) · [6](indexes/asn/0006.md) · [7](indexes/asn/0007.md) · [8](indexes/asn/0008.md) · [9](indexes/asn/0009.md) · [10](indexes/asn/0010.md) · [11](indexes/asn/0011.md) · [12](indexes/asn/0012.md) · [13](indexes/asn/0013.md) · [14](indexes/asn/0014.md) · [15](indexes/asn/0015.md) · [16](indexes/asn/0016.md) · [17](indexes/asn/0017.md) · [18](indexes/asn/0018.md) · [19](indexes/asn/0019.md) · [20](indexes/asn/0020.md) · [21](indexes/asn/0021.md) · [22](indexes/asn/0022.md) · [23](indexes/asn/0023.md) · [24](indexes/asn/0024.md) · [25](indexes/asn/0025.md) · [26](indexes/asn/0026.md) · [27](indexes/asn/0027.md) · [28](indexes/asn/0028.md) · [29](indexes/asn/0029.md) · [30](indexes/asn/0030.md) · [31](indexes/asn/0031.md) · [32](indexes/asn/0032.md) · [33](indexes/asn/0033.md) · [34](indexes/asn/0034.md) · [35](indexes/asn/0035.md) · [36](indexes/asn/0036.md) · [37](indexes/asn/0037.md) · [38](indexes/asn/0038.md) · [39](indexes/asn/0039.md) · [40](indexes/asn/0040.md) · [41](indexes/asn/0041.md) · [42](indexes/asn/0042.md) · [43](indexes/asn/0043.md) · [44](indexes/asn/0044.md) · [45](indexes/asn/0045.md) · [46](indexes/asn/0046.md) · [47](indexes/asn/0047.md) · [48](indexes/asn/0048.md) · [49](indexes/asn/0049.md) · [50](indexes/asn/0050.md) · [51](indexes/asn/0051.md) · [52](indexes/asn/0052.md) · [53](indexes/asn/0053.md) · [54](indexes/asn/0054.md) · [55](indexes/asn/0055.md) · [56](indexes/asn/0056.md) · [57](indexes/asn/0057.md) · [58](indexes/asn/0058.md) · [59](indexes/asn/0059.md) · [60](indexes/asn/0060.md) · [61](indexes/asn/0061.md) · [62](indexes/asn/0062.md) · [63](indexes/asn/0063.md) · [64](indexes/asn/0064.md) · [65](indexes/asn/0065.md) · [66](indexes/asn/0066.md) · [67](indexes/asn/0067.md) · [68](indexes/asn/0068.md) · [69](indexes/asn/0069.md) · [70](indexes/asn/0070.md) · [71](indexes/asn/0071.md) · [72](indexes/asn/0072.md) · [73](indexes/asn/0073.md) · [74](indexes/asn/0074.md) · [75](indexes/asn/0075.md) · [76](indexes/asn/0076.md) · [77](indexes/asn/0077.md) · [78](indexes/asn/0078.md) · [79](indexes/asn/0079.md) · [80](indexes/asn/0080.md) · [81](indexes/asn/0081.md) · [82](indexes/asn/0082.md) · [83](indexes/asn/0083.md) |
+| geo-lite/geoip | 12 | [1](indexes/geo-lite/geoip/0001.md) |
+| geo-lite/geosite | 24 | [1](indexes/geo-lite/geosite/0001.md) |
+| geo/geoip | 260 | [1](indexes/geo/geoip/0001.md) |
+| geo/geosite | 1,924 | [1](indexes/geo/geosite/0001.md) · [2](indexes/geo/geosite/0002.md) |
