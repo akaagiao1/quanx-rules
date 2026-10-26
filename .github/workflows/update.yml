@@ -1,0 +1,112 @@
+name: Update QuanX Rules
+
+on:
+  schedule:
+    - cron: '30 0 * * *' # 08:30 Asia/Shanghai
+  workflow_dispatch:
+    inputs:
+      allow_large_removal:
+        description: '确认上游有意删除大量分类后，允许超过 20% 的分类减少'
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - 'quanx_rules/**'
+      - 'tests/**'
+      - '.github/workflows/update.yml'
+      - 'LICENSE'
+      - 'THIRD_PARTY.md'
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quanx-update-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Test converter and publication
+        run: python -m unittest discover -v
+      - name: Convert every upstream category
+        if: github.event_name != 'pull_request'
+        env:
+          REPOSITORY: ${{ github.repository }}
+          ALLOW_LARGE_REMOVAL: ${{ github.event_name == 'workflow_dispatch' && inputs.allow_large_removal || false }}
+        run: |
+          flags=()
+          if [[ "$ALLOW_LARGE_REMOVAL" == 'true' ]]; then
+            flags+=(--allow-large-removal)
+          fi
+          python -m quanx_rules --repository "$REPOSITORY" --output dist "${flags[@]}"
+      - name: Write synchronization summary
+        if: github.event_name != 'pull_request'
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          report = json.loads(Path('dist/reports/summary.json').read_text())
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as target:
+              target.write('## QuanX 全量同步\n\n')
+              for key in ('source_sha', 'categories', 'output_files', 'output_rules', 'unsupported_entries', 'statuses'):
+                  target.write(f'- **{key}**: `{report[key]}`\n')
+              target.write('\n域名正则无法等价转换，原始表达式保留在产物 reports/ 的清单中。\n')
+          PY
+      - name: Package validated subscriptions
+        if: github.event_name != 'pull_request'
+        run: tar -czf quanx-rules.tar.gz -C dist .
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: github.event_name != 'pull_request'
+        with:
+          name: quanx-rules
+          path: quanx-rules.tar.gz
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 7
+
+  publish:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: quanx-rules
+          path: artifact
+      - name: Restore validated subscriptions
+        run: |
+          mkdir dist
+          tar -xzf artifact/quanx-rules.tar.gz -C dist
+      - name: Commit changes to quanx branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          ALLOW_LARGE_REMOVAL: ${{ github.event_name == 'workflow_dispatch' && inputs.allow_large_removal || false }}
+        run: |
+          gh auth setup-git
+          flags=()
+          if [[ "$ALLOW_LARGE_REMOVAL" == 'true' ]]; then
+            flags+=(--allow-large-removal)
+          fi
+          python -m quanx_rules.publish --output dist --remote "https://github.com/$REPOSITORY.git" "${flags[@]}"

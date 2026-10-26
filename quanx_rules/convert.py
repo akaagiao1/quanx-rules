@@ -16,12 +16,12 @@ class Conversion:
     source_entries: int
 
 
-def _values(value: object) -> list[str]:
+def _values(value: object, *, filter_value=True) -> list[str]:
     values = [value] if isinstance(value, str) else value
     if not isinstance(values, list) or any(not isinstance(v, str) for v in values):
         raise ConversionError("match values must be strings or arrays of strings")
     for item in values:
-        if not item or item != item.strip() or "," in item or any(ord(c) < 32 or ord(c) == 127 for c in item):
+        if not item or (filter_value and (item != item.strip() or "," in item or any(ord(c) < 32 or ord(c) == 127 for c in item))):
             raise ConversionError(f"unsafe or empty match value: {item!r}")
     return values
 
@@ -54,7 +54,7 @@ def convert_document(document: dict) -> Conversion:
         if not isinstance(rule, dict) or set(rule) - allowed:
             raise ConversionError(f"unsupported rule structure or constraints: {rule!r}")
         for field, raw in rule.items():
-            for value in _values(raw):
+            for value in _values(raw, filter_value=field != "domain_regex"):
                 count += 1
                 if field == "domain_regex":
                     unsupported.append({"field": field, "value": value,

@@ -46,6 +46,12 @@ class ConversionTests(unittest.TestCase):
         self.assertEqual(convert_document(document()).source_entries, 0)
         self.assertEqual(convert_document(document({"domain": []})).lines, [])
 
+    def test_regex_quantifier_comma_is_preserved_in_report(self):
+        value = "^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$"
+        result = convert_document(document({"domain_regex": value}))
+        self.assertEqual(result.lines, [])
+        self.assertEqual(result.unsupported[0]["value"], value)
+
     def test_unsafe_values_are_rejected(self):
         for key, value in [
             ("domain", "ok.test,reject"), ("domain_keyword", "ads\nfinal,direct"),
