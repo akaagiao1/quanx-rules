@@ -46,3 +46,9 @@ python3 -m quanx_rules --repository akaagiao1/quanx-rules \
 ## 验证范围
 
 没有进行 Quantumult X 真机导入或运行时匹配测试。输出语法和策略覆盖方式依据客户端作者的官方示例；域名正则没有近似转换。实时 GitHub 更新结果以 [Actions 运行记录](https://github.com/akaagiao1/quanx-rules/actions/workflows/update.yml) 和产物分支报告为准。
+
+## GitHub 首次发布验收
+
+[首次手动运行 #40358621981](https://github.com/akaagiao1/quanx-rules/actions/runs/40358621981) 的 build 和 publish 均成功完成，产物发布提交为 `c7d44570f74349e515a361178da3402615978ea9`。工作流状态 active，部署后的定时配置为 UTC `30 0 * * *`，即每天北京时间 08:30。
+
+公开 Raw 地址的同步报告已核对，分类数、订阅文件数、规则数与本地完整验证一致。Google 域名、Telegram IP、精简版 OpenAI 和 ASN AS13335 的订阅地址均实际访问成功，并检查了首条规则格式；分类索引也可公开访问。

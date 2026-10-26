@@ -73,5 +73,5 @@
 - [x] Run full source archive conversion; record source SHA, category/status/rule counts, elapsed time and disk usage.
 - [x] Run a second conversion and compare file hashes; validate indexes and generated rule syntax via builder checks.
 - [x] Request a fresh read-only whole-project code review, fix Important/Critical findings with regression tests and a passing full suite.
-- [ ] Verify suite and workflow configuration, create public GitHub repo, upload source, dispatch workflow if needed, and inspect its result until the first quanx publication succeeds.
-- [ ] Inspect published summary, several real subscription URLs and workflow schedule; deliver repo URL and concise usage. Do not claim QuanX device testing.
+- [x] Verify suite and workflow configuration, create public GitHub repo, upload source, dispatch workflow if needed, and inspect its result until the first quanx publication succeeds.
+- [x] Inspect published summary, several real subscription URLs and workflow schedule; deliver repo URL and concise usage. Do not claim QuanX device testing.
