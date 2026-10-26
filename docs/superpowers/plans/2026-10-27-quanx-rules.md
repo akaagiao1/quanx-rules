@@ -1,6 +1,6 @@
 # QuanX Rules Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [x]`) syntax for tracking.
 
 **Goal:** Publish an independent repository that synchronizes every upstream classification to QuanX daily.
 
@@ -33,11 +33,11 @@
 
 **Interfaces:** Produces ConversionError and convert_document(document: dict) -> Conversion(lines: list[str], unsupported: list[dict], source_entries: int). Canonical policy is proxy. Lines contain no header or timestamp. domain_regex entries are retained as unsupported.
 
-- [ ] Write failing tests covering domain/full suffix/leading-dot suffix/keyword, string and array forms, IPv4/IPv6 normalization and de-duplication, regex-only and empty inputs, injection and unknown/logical constraints.
-- [ ] Run python3.12 -m unittest tests.test_convert -v; expect missing converter errors until the interface exists, then assertion failures for incomplete conversion.
-- [ ] Implement scalar normalization, strict supported-key/shape validation, host/host-suffix/host-wildcard mappings and CIDR conversion; reject ambiguity.
-- [ ] Run python3.12 -m unittest discover -v; expect all tests passing.
-- [ ] Commit conversion and tests.
+- [x] Write failing tests covering domain/full suffix/leading-dot suffix/keyword, string and array forms, IPv4/IPv6 normalization and de-duplication, regex-only and empty inputs, injection and unknown/logical constraints.
+- [x] Run python3.12 -m unittest tests.test_convert -v; expect missing converter errors until the interface exists, then assertion failures for incomplete conversion.
+- [x] Implement scalar normalization, strict supported-key/shape validation, host/host-suffix/host-wildcard mappings and CIDR conversion; reject ambiguity.
+- [x] Run python3.12 -m unittest discover -v; expect all tests passing.
+- [x] Commit conversion and tests.
 
 ### Task 2: Complete snapshots and deterministic catalog
 
@@ -45,12 +45,12 @@
 
 **Interfaces:** Consumes convert_document. Produces build_archive(archive: Path, output: Path, sha: str, repository: str) -> dict summary; resolve_snapshot() -> str; download_snapshot(sha: str, destination: Path) -> None. CLI supports --archive and --sha for reproducible offline builds and downloads a pinned snapshot otherwise.
 
-- [ ] Write failing integration tests with real miniature tarballs, including unexpected JSON directories, traversal, duplicate members, corrupted/truncated gzip, supported/partial/unsupported-only/empty categories, valid links, deterministic output, replacement/removal and preserving old output on error.
-- [ ] Write offline HTTP tests for commit resolution, retries and incomplete download handling using a local server.
-- [ ] Run new tests and confirm missing build/download behavior.
-- [ ] Implement archive scan without extraction, atomic staging, source SHA and provenance, sharded manifests and paged Markdown indexes, nonempty rule files and full regex reports; verify every category and rule line before publication.
-- [ ] Implement bounded retries/timeouts for official GitHub endpoints; keep cache outside output. Require the known source directory families to exist and reject >20% classification loss compared with existing reports/summary.json by default; provide a documented explicit override for intentional upstream removals.
-- [ ] Run all unittest tests; expect pass. Commit.
+- [x] Write failing integration tests with real miniature tarballs, including unexpected JSON directories, traversal, duplicate members, corrupted/truncated gzip, supported/partial/unsupported-only/empty categories, valid links, deterministic output, replacement/removal and preserving old output on error.
+- [x] Write offline HTTP tests for commit resolution, retries and incomplete download handling using a local server.
+- [x] Run new tests and confirm missing build/download behavior.
+- [x] Implement archive scan without extraction, atomic staging, source SHA and provenance, sharded manifests and paged Markdown indexes, nonempty rule files and full regex reports; verify every category and rule line before publication.
+- [x] Implement bounded retries/timeouts for official GitHub endpoints; keep cache outside output. Require the known source directory families to exist and reject >20% classification loss compared with existing reports/summary.json by default; provide a documented explicit override for intentional upstream removals.
+- [x] Run all unittest tests; expect pass. Commit.
 
 ### Task 3: Publishing, workflow and user documentation
 
@@ -58,11 +58,11 @@
 
 **Interfaces:** Consumes generated output directory. Produces publish(output: Path, remote: str, branch: str = 'quanx') -> bool: true only if a commit was pushed; raises on failed fetch/push. CLI accepts output and remote. Fetch existing branch or identify truly absent branch via ls-remote; never swallow network/auth failures.
 
-- [ ] Write failing integration tests using temporary local bare repositories: initial publication, unchanged rerun, changed/removal publication, push failure and fetch error.
-- [ ] Implement temporary isolated publishing checkout with ordinary commits/push and fixed bot identity; never include secret values in exceptions or logs.
-- [ ] Add a single workflow with schedule, workflow_dispatch and code push triggers; tests always run and publishing is restricted to trusted main branch runs, not pull requests. Scope write token to publishing job only; serialize updates and report all compatibility counts.
-- [ ] Write Chinese setup/subscription/local usage documents, explicit empty/regex caveats and source attribution. Preserve upstream GPL-3.0 license and identify upstream data provenance without asserting all external sources have the same license.
-- [ ] Run unittest suite and workflow validation. Commit.
+- [x] Write failing integration tests using temporary local bare repositories: initial publication, unchanged rerun, changed/removal publication, push failure and fetch error.
+- [x] Implement temporary isolated publishing checkout with ordinary commits/push and fixed bot identity; never include secret values in exceptions or logs.
+- [x] Add a single workflow with schedule, workflow_dispatch and code push triggers; tests always run and publishing is restricted to trusted main branch runs, not pull requests. Scope write token to publishing job only; serialize updates and report all compatibility counts.
+- [x] Write Chinese setup/subscription/local usage documents, explicit empty/regex caveats and source attribution. Preserve upstream GPL-3.0 license and identify upstream data provenance without asserting all external sources have the same license.
+- [x] Run unittest suite and workflow validation. Commit.
 
 ### Task 4: Real-data validation, review and GitHub deployment
 
@@ -70,8 +70,8 @@
 
 **Interfaces:** Uses all preceding tasks. Remote target akaagiao1/quanx-rules (new public repository for directly accessible rule subscriptions).
 
-- [ ] Run full source archive conversion; record source SHA, category/status/rule counts, elapsed time and disk usage.
-- [ ] Run a second conversion and compare file hashes; validate indexes and generated rule syntax via builder checks.
-- [ ] Request a fresh read-only whole-project code review, fix Important/Critical findings with regression tests and a passing full suite.
+- [x] Run full source archive conversion; record source SHA, category/status/rule counts, elapsed time and disk usage.
+- [x] Run a second conversion and compare file hashes; validate indexes and generated rule syntax via builder checks.
+- [x] Request a fresh read-only whole-project code review, fix Important/Critical findings with regression tests and a passing full suite.
 - [ ] Verify suite and workflow configuration, create public GitHub repo, upload source, dispatch workflow if needed, and inspect its result until the first quanx publication succeeds.
 - [ ] Inspect published summary, several real subscription URLs and workflow schedule; deliver repo URL and concise usage. Do not claim QuanX device testing.
