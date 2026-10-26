@@ -50,10 +50,10 @@ def _scan(archive: Path, target: Path, sha: str):
     records = defaultdict(list)
     seen = set()
     source_bytes = 0
-    # Draining GzipFile after tar iteration verifies the CRC and detects a
-    # truncated download even when tarfile has already seen its end marker.
+    # Use the seekable reader so the exact TAR end-marker position can be
+    # checked; tarfile alone tolerates a missing or incomplete terminator.
     with gzip.open(archive, "rb") as compressed:
-        with tarfile.open(fileobj=compressed, mode="r|") as source:
+        with tarfile.open(fileobj=compressed, mode="r:") as source:
             for member in source:
                 name = _category(member, f"meta-rules-dat-{sha}")
                 if name is None:
@@ -85,8 +85,13 @@ def _scan(archive: Path, target: Path, sha: str):
                 records[name.rsplit("/", 1)[0]].append(record)
                 if len(seen) % 20_000 == 0:
                     print(f"Converted {len(seen):,} categories", flush=True)
-        while compressed.read(1024 * 1024):
-            pass
+            compressed.seek(source.offset)
+            if compressed.read(1024) != bytes(1024):
+                raise ConversionError("missing TAR completion marker; archive may be truncated")
+        # Drain to EOF to verify the gzip CRC and reject hidden data after TAR.
+        while trailing := compressed.read(1024 * 1024):
+            if trailing.strip(b"\0"):
+                raise ConversionError("unexpected content after TAR completion marker")
     if not FAMILIES <= set(records):
         raise ConversionError(f"incomplete snapshot; missing families: {sorted(FAMILIES - set(records))}")
     return records
@@ -155,6 +160,8 @@ def _catalog(target, records, sha, repository):
 def validate_output(output: Path) -> dict:
     output = Path(output)
     summary = json.loads((output / "reports/summary.json").read_text(encoding="utf-8"))
+    if summary["output_files"] <= 0 or summary["output_rules"] <= 0:
+        raise ConversionError("refusing to publish a globally empty ruleset")
     seen = set()
     paths = set()
     statuses = Counter({status: 0 for status in STATUSES})

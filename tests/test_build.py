@@ -93,3 +93,26 @@ class BuildTests(unittest.TestCase):
         (self.output / "rules/asn/AS1.list").write_text("final,direct\n")
         with self.assertRaises(ConversionError):
             validate_output(self.output)
+
+    def test_globally_empty_result_preserves_previous_subscriptions(self):
+        src = archive(self.root / "src.tgz")
+        self.build(src)
+        before = digest_tree(self.output)
+        archive(src, members=[(name, {}) for name in BASE])
+        with self.assertRaises(ConversionError):
+            self.build(src)
+        self.assertEqual(digest_tree(self.output), before)
+        with self.assertRaises(ConversionError):
+            build_archive(src, self.root / "first-run", SHA, "test/rules")
+
+    def test_valid_gzip_with_truncated_tar_preserves_previous_output(self):
+        src = archive(self.root / "src.tgz", {"geo/geosite/last.json": {"domain": "last.test"}})
+        self.build(src)
+        before = digest_tree(self.output)
+        data = gzip.decompress(src.read_bytes())
+        # Five complete members remain, including all required directory families,
+        # but the final category and the TAR end markers are absent.
+        src.write_bytes(gzip.compress(data[:5 * 1024]))
+        with self.assertRaises(ConversionError):
+            self.build(src)
+        self.assertEqual(digest_tree(self.output), before)
