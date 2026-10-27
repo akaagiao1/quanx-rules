@@ -82,12 +82,19 @@ host,clck.yango.com,proxy
 host,click.rustore.ru,proxy
 host,copilot-telemetry-service.githubusercontent.com,proxy
 host,copilot-telemetry.githubusercontent.com,proxy
+host,crashlyticsreports-pa.googleapis.com,proxy
+host,dc.applicationinsights.azure.com,proxy
+host,dc.services.visualstudio.com,proxy
 host,disney.my.sentry.io,proxy
 host,error-tracking.megamarket.tech,proxy
+host,firebase-settings.crashlytics.com,proxy
+host,firebaselogging-pa.googleapis.com,proxy
+host,firebaselogging.googleapis.com,proxy
 host,google-analytics-suite.ozon.ru,proxy
 host,incoming-telemetry.thunderbird.net,proxy
 host,incoming.telemetry.mozilla.org,proxy
 host,informer.yandex.ru,proxy
+host,live.applicationinsights.azure.com,proxy
 host,log-sdk.gifshow.com,proxy
 host,log.strm.yandex.ru,proxy
 host,log3-applog-hl.fqnovel.com,proxy
@@ -121,6 +128,7 @@ host,r1.mail.ru,proxy
 host,reklama.mail.ru,proxy
 host,report.ap.yandex-net.ru,proxy
 host,rs.mail.ru,proxy
+host,rt.services.visualstudio.com,proxy
 host,rtlog3-applog-hl.fqnovel.com,proxy
 host,rtlog3-applog.fqnovel.com,proxy
 host,rtlog5-applog-hl.fqnovel.com,proxy
@@ -134,6 +142,7 @@ host,sentry.kontur.host,proxy
 host,sentry.mindbox.ru,proxy
 host,sentry.ozon.ru,proxy
 host,sentry.popmechanic.ru,proxy
+host,sentry.ppy.sh,proxy
 host,sentry.rustore.ru,proxy
 host,sentry.sberauto.com,proxy
 host,sentry.viqeo.tv,proxy
@@ -151,6 +160,7 @@ host,t.mail.ru,proxy
 host,target.vk.com,proxy
 host,top-staging.mail.ru,proxy
 host,tracing-http.megamarket.tech,proxy
+host,update.crashlytics.com,proxy
 host,visor.sberbank.ru,proxy
 host,web-analytics.wildberries.ru,proxy
 host,whiteline.mail.ru,proxy
@@ -234,6 +244,7 @@ host-suffix,admob.xiaomi.com,proxy
 host-suffix,admusicpic.music.126.net,proxy
 host-suffix,adnet.qq.com,proxy
 host-suffix,adnet.sohu.com,proxy
+host-suffix,adobestats.io,proxy
 host-suffix,adping.qq.com,proxy
 host-suffix,adpm.app.qq.com,proxy
 host-suffix,ads-api.duolingo.com,proxy
@@ -313,6 +324,7 @@ host-suffix,adxprtz.com,proxy
 host-suffix,afd.baidu.com,proxy
 host-suffix,afdconf.baidu.com,proxy
 host-suffix,afp.iqiyi.com,proxy
+host-suffix,akstat.io,proxy
 host-suffix,alimama.alicdn.com,proxy
 host-suffix,alitui.weibo.com,proxy
 host-suffix,alog.umeng.com,proxy
@@ -345,6 +357,9 @@ host-suffix,app-analytics-services.com,proxy
 host-suffix,app-measurement-cn.com,proxy
 host-suffix,app-measurement.com,proxy
 host-suffix,apple.www.letv.com,proxy
+host-suffix,applicationinsights.io,proxy
+host-suffix,applicationinsights.net,proxy
+host-suffix,applogcdn.com,proxy
 host-suffix,applovin.com,proxy
 host-suffix,applvn.com,proxy
 host-suffix,appmetrica.yandex.com,proxy
@@ -354,6 +369,7 @@ host-suffix,appmetrica.yango.com,proxy
 host-suffix,appsflyersdk.com,proxy
 host-suffix,apptracer.ru,proxy
 host-suffix,ar.umeng.com,proxy
+host-suffix,aria.ms,proxy
 host-suffix,ark.letv.com,proxy
 host-suffix,aspect-upush.umeng.com,proxy
 host-suffix,assistant-api.amplitude.com,proxy
@@ -408,6 +424,8 @@ host-suffix,click.hunantv.com,proxy
 host-suffix,click.uve.mobile.sina.cn,proxy
 host-suffix,click.uve.weibo.com,proxy
 host-suffix,clickstream.sberbank.ru,proxy
+host-suffix,cloudflareinsights-cn.com,proxy
+host-suffix,cloudflareinsights.com,proxy
 host-suffix,cloudpush.iqiyi.com,proxy
 host-suffix,cm.baidu.com,proxy
 host-suffix,cnaa123.com,proxy
@@ -434,6 +452,7 @@ host-suffix,cxhub.ru,proxy
 host-suffix,da.hunantv.com,proxy
 host-suffix,da.mgtv.com,proxy
 host-suffix,data.flurry.com,proxy
+host-suffix,data.microsoft.com,proxy
 host-suffix,data.mistat.india.xiaomi.com,proxy
 host-suffix,data.mistat.intl.xiaomi.com,proxy
 host-suffix,data.mistat.rus.xiaomi.com,proxy
@@ -553,6 +572,7 @@ host-suffix,imglnkd.com,proxy
 host-suffix,imgstat.baidu.com,proxy
 host-suffix,imp.go.sohu.com,proxy
 host-suffix,impact-ad.jp,proxy
+host-suffix,in.applicationinsights.azure.com,proxy
 host-suffix,inner-active.mobi,proxy
 host-suffix,innovid.com,proxy
 host-suffix,insights-collector.gog.com,proxy
@@ -609,6 +629,7 @@ host-suffix,mc.yandex.ru,proxy
 host-suffix,mcs.snssdk.com,proxy
 host-suffix,mdt.qq.com,proxy
 host-suffix,mediav.com,proxy
+host-suffix,meitustat.com,proxy
 host-suffix,metrics.duolingo.com,proxy
 host-suffix,metrics.viqeo.tv,proxy
 host-suffix,metrika.yandex.com,proxy
@@ -622,6 +643,7 @@ host-suffix,mipcache.bdstatic.com,proxy
 host-suffix,misc.in.duokanbox.com,proxy
 host-suffix,mixer.sina.cn,proxy
 host-suffix,mlog.hiido.com,proxy
+host-suffix,mmstat.com,proxy
 host-suffix,moat.com,proxy
 host-suffix,moatads.com,proxy
 host-suffix,mobads-logs.baidu.com,proxy
@@ -677,6 +699,7 @@ host-suffix,panplayable-toutiao-b.com,proxy
 host-suffix,panplayable-toutiao.com,proxy
 host-suffix,partnerad.l.google.com,proxy
 host-suffix,passport-log.youku.com,proxy
+host-suffix,paypalbeacon.com,proxy
 host-suffix,pb.i.sogou.com,proxy
 host-suffix,pbmp.ali213.net,proxy
 host-suffix,perf-events.cloud.unity3d.com,proxy
@@ -742,6 +765,7 @@ host-suffix,serving-sys.com,proxy
 host-suffix,sf3-ttcdn-tos.pstatp.com,proxy
 host-suffix,shhs-ydd8x2.yjrmss.cn,proxy
 host-suffix,shoppingads.cn,proxy
+host-suffix,shuqistat.com,proxy
 host-suffix,shuzilm.cn,proxy
 host-suffix,slog.sina.cn,proxy
 host-suffix,slog.sina.com.cn,proxy
@@ -772,6 +796,7 @@ host-suffix,tce.alicdn.com,proxy
 host-suffix,tcss.qq.com,proxy
 host-suffix,tdsdk.cpatrk.net,proxy
 host-suffix,telecome.cn,proxy
+host-suffix,telemetry.microsoft.com,proxy
 host-suffix,testads.api.my7v.com,proxy
 host-suffix,theta.sogoucdn.com,proxy
 host-suffix,tjqonline.cn,proxy
@@ -817,6 +842,7 @@ host-suffix,v6-adashx.ut.ele.me,proxy
 host-suffix,v6-adashx.ut.taobao.com,proxy
 host-suffix,v6-adashx.ut.youku.com,proxy
 host-suffix,vk-analytics.ru,proxy
+host-suffix,volceapplog.com,proxy
 host-suffix,w.cnzz.com,proxy
 host-suffix,wangmeng.baidu.com,proxy
 host-suffix,wapwbclick.mobile.sina.cn,proxy

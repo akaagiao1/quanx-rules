@@ -1,6 +1,6 @@
 # QuanX 全量分类目录
 
-上游快照：`d6a46777aa9438e4f718fdbbc0e42768a3dc62ea`
+上游快照：`9ed688708bd839faca865ef73e497dd27c77ba46`
 
 所有文件默认策略为 `proxy`；订阅时用 `force-policy` 指定自己的策略组。
 partial 表示含无法转换的域名正则；unsupported-only 和 empty 不提供空订阅。
@@ -11,4 +11,4 @@ partial 表示含无法转换的域名正则；unsupported-only 和 empty 不提
 | geo-lite/geoip | 12 | [1](indexes/geo-lite/geoip/0001.md) |
 | geo-lite/geosite | 24 | [1](indexes/geo-lite/geosite/0001.md) |
 | geo/geoip | 260 | [1](indexes/geo/geoip/0001.md) |
-| geo/geosite | 1,924 | [1](indexes/geo/geosite/0001.md) · [2](indexes/geo/geosite/0002.md) |
+| geo/geosite | 2,017 | [1](indexes/geo/geosite/0001.md) · [2](indexes/geo/geosite/0002.md) · [3](indexes/geo/geosite/0003.md) |

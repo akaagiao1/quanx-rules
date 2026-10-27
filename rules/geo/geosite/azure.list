@@ -2,6 +2,8 @@
 # Unsupported entries: 0; see reports/
 host,azure.microsoft.com,proxy
 host,azuremarketplace.microsoft.com,proxy
+host,dc.applicationinsights.azure.com,proxy
+host,live.applicationinsights.azure.com,proxy
 host-suffix,21vbc.com,proxy
 host-suffix,21vbluecloud.com,proxy
 host-suffix,21vbluecloud.net,proxy
@@ -118,6 +120,7 @@ host-suffix,cosmosdb.net,proxy
 host-suffix,devopsms.com,proxy
 host-suffix,gotcosmos.com,proxy
 host-suffix,hdinsightservices.cn,proxy
+host-suffix,in.applicationinsights.azure.com,proxy
 host-suffix,management-azure-devices-int.net,proxy
 host-suffix,management-azure-devices-provisioning.cn,proxy
 host-suffix,management-azure-devices.cn,proxy
