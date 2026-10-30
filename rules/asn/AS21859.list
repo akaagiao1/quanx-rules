@@ -142,6 +142,7 @@ ip-cidr,109.66.92.0/23,proxy
 ip-cidr,112.196.200.0/24,proxy
 ip-cidr,114.114.112.0/21,proxy
 ip-cidr,116.199.152.0/22,proxy
+ip-cidr,116.199.158.0/24,proxy
 ip-cidr,117.55.205.0/24,proxy
 ip-cidr,118.26.56.0/22,proxy
 ip-cidr,118.82.7.0/24,proxy
@@ -185,9 +186,7 @@ ip-cidr,128.1.152.0/24,proxy
 ip-cidr,128.1.154.0/23,proxy
 ip-cidr,128.1.156.0/22,proxy
 ip-cidr,128.1.16.0/21,proxy
-ip-cidr,128.1.160.0/23,proxy
-ip-cidr,128.1.163.0/24,proxy
-ip-cidr,128.1.164.0/22,proxy
+ip-cidr,128.1.160.0/21,proxy
 ip-cidr,128.1.168.0/24,proxy
 ip-cidr,128.1.170.0/23,proxy
 ip-cidr,128.1.172.0/22,proxy
@@ -343,7 +342,6 @@ ip-cidr,151.242.87.0/24,proxy
 ip-cidr,151.243.101.0/24,proxy
 ip-cidr,151.244.188.0/24,proxy
 ip-cidr,152.175.144.0/23,proxy
-ip-cidr,152.175.146.0/24,proxy
 ip-cidr,152.175.148.0/22,proxy
 ip-cidr,152.175.152.0/21,proxy
 ip-cidr,152.175.214.0/23,proxy
@@ -649,13 +647,13 @@ ip-cidr,45.10.70.0/23,proxy
 ip-cidr,45.119.5.0/24,proxy
 ip-cidr,45.124.253.0/24,proxy
 ip-cidr,45.124.254.0/23,proxy
-ip-cidr,45.128.144.0/23,proxy
-ip-cidr,45.131.176.0/23,proxy
-ip-cidr,45.132.236.0/23,proxy
+ip-cidr,45.128.145.0/24,proxy
+ip-cidr,45.131.177.0/24,proxy
+ip-cidr,45.132.237.0/24,proxy
 ip-cidr,45.133.176.0/24,proxy
-ip-cidr,45.133.236.0/23,proxy
-ip-cidr,45.134.80.0/23,proxy
-ip-cidr,45.137.8.0/23,proxy
+ip-cidr,45.133.237.0/24,proxy
+ip-cidr,45.134.81.0/24,proxy
+ip-cidr,45.137.9.0/24,proxy
 ip-cidr,45.151.141.0/24,proxy
 ip-cidr,45.155.158.0/24,proxy
 ip-cidr,45.156.131.0/24,proxy
@@ -875,7 +873,6 @@ ip6-cidr,2404:3700::/48,proxy
 ip6-cidr,2404:ff40:7000::/36,proxy
 ip6-cidr,240d:c010:14b::/48,proxy
 ip6-cidr,240d:c010:14c::/48,proxy
-ip6-cidr,2602:fed2:731a::/48,proxy
 ip6-cidr,2602:ffe4:400::/45,proxy
 ip6-cidr,2602:ffe4:409::/48,proxy
 ip6-cidr,2602:ffe4:40a::/47,proxy
@@ -910,7 +907,6 @@ ip6-cidr,2602:ffe4:c34::/48,proxy
 ip6-cidr,2602:ffe4:c37::/48,proxy
 ip6-cidr,2602:ffe4:c3b::/48,proxy
 ip6-cidr,2602:ffe4:c3c::/48,proxy
-ip6-cidr,2602:ffe4:c3e::/48,proxy
 ip6-cidr,2602:ffe4:c40::/47,proxy
 ip6-cidr,2602:ffe4:c42::/48,proxy
 ip6-cidr,2602:ffe4:c44::/47,proxy
@@ -921,6 +917,7 @@ ip6-cidr,2602:ffe4:c56::/47,proxy
 ip6-cidr,2602:ffe4:c58::/48,proxy
 ip6-cidr,2602:ffe4:c5b::/48,proxy
 ip6-cidr,2602:ffe4:c5d::/48,proxy
+ip6-cidr,2602:ffe4:c5e::/48,proxy
 ip6-cidr,2602:ffe4:c64::/47,proxy
 ip6-cidr,2602:ffe4:c6c::/47,proxy
 ip6-cidr,2602:ffe4:c6e::/48,proxy

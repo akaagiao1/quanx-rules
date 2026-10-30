@@ -1,11 +1,9 @@
 # Source: MetaCubeX/meta-rules-dat/sing/asn/AS63473.json
 # Unsupported entries: 0; see reports/
-ip-cidr,103.167.150.0/23,proxy
-ip-cidr,103.214.22.0/23,proxy
+ip-cidr,103.214.23.0/24,proxy
 ip-cidr,103.63.28.0/24,proxy
 ip-cidr,103.63.30.0/24,proxy
 ip-cidr,103.73.64.0/23,proxy
-ip-cidr,104.234.167.0/24,proxy
 ip-cidr,109.205.61.0/24,proxy
 ip-cidr,134.195.88.0/22,proxy
 ip-cidr,140.99.243.0/24,proxy
@@ -15,12 +13,10 @@ ip-cidr,151.243.148.0/24,proxy
 ip-cidr,151.245.106.0/24,proxy
 ip-cidr,153.92.126.0/23,proxy
 ip-cidr,157.254.168.0/24,proxy
-ip-cidr,167.104.100.0/22,proxy
 ip-cidr,167.104.104.0/21,proxy
 ip-cidr,167.104.160.0/22,proxy
-ip-cidr,167.104.168.0/24,proxy
-ip-cidr,167.254.240.0/23,proxy
-ip-cidr,170.205.36.0/22,proxy
+ip-cidr,170.205.37.0/24,proxy
+ip-cidr,170.205.38.0/23,proxy
 ip-cidr,176.126.70.0/24,proxy
 ip-cidr,176.126.84.0/23,proxy
 ip-cidr,176.126.86.0/24,proxy
@@ -31,7 +27,6 @@ ip-cidr,185.197.30.0/24,proxy
 ip-cidr,185.198.26.0/24,proxy
 ip-cidr,185.213.24.0/24,proxy
 ip-cidr,185.213.26.0/24,proxy
-ip-cidr,185.223.207.0/24,proxy
 ip-cidr,188.244.117.0/24,proxy
 ip-cidr,188.93.140.0/24,proxy
 ip-cidr,193.29.62.0/23,proxy
@@ -44,11 +39,10 @@ ip-cidr,31.220.42.0/23,proxy
 ip-cidr,31.220.44.0/23,proxy
 ip-cidr,31.220.7.0/24,proxy
 ip-cidr,31.56.232.0/24,proxy
-ip-cidr,31.56.62.0/24,proxy
 ip-cidr,31.57.218.0/24,proxy
 ip-cidr,31.57.224.0/24,proxy
 ip-cidr,45.132.72.0/24,proxy
-ip-cidr,45.132.74.0/23,proxy
+ip-cidr,45.132.74.0/24,proxy
 ip-cidr,45.151.142.0/24,proxy
 ip-cidr,45.158.125.0/24,proxy
 ip-cidr,45.45.216.0/22,proxy
@@ -59,10 +53,11 @@ ip-cidr,77.90.31.0/24,proxy
 ip-cidr,77.90.35.0/24,proxy
 ip-cidr,82.180.149.0/24,proxy
 ip-cidr,82.21.65.0/24,proxy
-ip-cidr,82.22.63.0/24,proxy
 ip-cidr,82.47.177.0/24,proxy
 ip-cidr,83.138.53.0/24,proxy
-ip-cidr,85.155.176.0/20,proxy
+ip-cidr,85.155.178.0/23,proxy
+ip-cidr,85.155.180.0/22,proxy
+ip-cidr,85.155.184.0/21,proxy
 ip-cidr,91.190.155.0/24,proxy
 ip-cidr,96.62.255.0/24,proxy
 ip6-cidr,2406:ef80:100::/40,proxy
@@ -72,6 +67,7 @@ ip6-cidr,2406:ef80:4::/47,proxy
 ip6-cidr,2605:4840:2::/47,proxy
 ip6-cidr,2a01:6f0:ffff::/48,proxy
 ip6-cidr,2a04:bdc7:100::/48,proxy
+ip6-cidr,2a0b:4e07:5b00::/40,proxy
 ip6-cidr,2a0d:5600:30::/48,proxy
 ip6-cidr,2a0e:dc0:1::/48,proxy
 ip6-cidr,2a0e:dc0:2::/47,proxy

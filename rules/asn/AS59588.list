@@ -1,5 +1,6 @@
 # Source: MetaCubeX/meta-rules-dat/sing/asn/AS59588.json
 # Unsupported entries: 0; see reports/
+ip-cidr,138.124.157.0/24,proxy
 ip-cidr,151.236.160.0/20,proxy
 ip-cidr,151.236.176.0/21,proxy
 ip-cidr,151.236.188.0/22,proxy
@@ -11,10 +12,11 @@ ip-cidr,194.59.28.0/23,proxy
 ip-cidr,198.160.164.0/22,proxy
 ip-cidr,198.160.168.0/23,proxy
 ip-cidr,198.176.116.0/23,proxy
-ip-cidr,204.157.181.0/24,proxy
+ip-cidr,204.157.180.0/23,proxy
 ip-cidr,45.153.116.0/22,proxy
 ip-cidr,5.252.132.0/24,proxy
 ip-cidr,5.252.134.0/23,proxy
+ip6-cidr,2a0b:1880:11::/48,proxy
 ip6-cidr,2a0b:1880:16::/47,proxy
 ip6-cidr,2a0b:1880:19::/48,proxy
 ip6-cidr,2a0b:1880:1a::/47,proxy
@@ -29,9 +31,9 @@ ip6-cidr,2a10:2204:180::/41,proxy
 ip6-cidr,2a10:2204:200::/42,proxy
 ip6-cidr,2a10:2204:280::/41,proxy
 ip6-cidr,2a10:2204:300::/40,proxy
+ip6-cidr,2a10:2204:400::/42,proxy
 ip6-cidr,2a10:2204:480::/41,proxy
 ip6-cidr,2a10:2204:500::/41,proxy
 ip6-cidr,2a10:2204:5c0::/42,proxy
 ip6-cidr,2a10:2204:600::/41,proxy
-ip6-cidr,2a10:2204:80::/42,proxy
-ip6-cidr,2a10:2204::/41,proxy
+ip6-cidr,2a10:2204::/40,proxy

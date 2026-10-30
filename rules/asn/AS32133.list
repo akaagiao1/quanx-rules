@@ -1,6 +1,14 @@
 # Source: MetaCubeX/meta-rules-dat/sing/asn/AS32133.json
 # Unsupported entries: 0; see reports/
-ip-cidr,169.197.16.0/23,proxy
+ip-cidr,169.197.16.0/26,proxy
+ip-cidr,169.197.16.112/29,proxy
+ip-cidr,169.197.16.120/30,proxy
+ip-cidr,169.197.16.124/32,proxy
+ip-cidr,169.197.16.126/31,proxy
+ip-cidr,169.197.16.128/25,proxy
+ip-cidr,169.197.16.64/27,proxy
+ip-cidr,169.197.16.96/28,proxy
+ip-cidr,169.197.17.0/24,proxy
 ip-cidr,169.197.18.0/25,proxy
 ip-cidr,169.197.18.128/29,proxy
 ip-cidr,169.197.18.136/30,proxy

@@ -1,4 +1,5 @@
 # Source: MetaCubeX/meta-rules-dat/sing/asn/AS200790.json
 # Unsupported entries: 0; see reports/
-ip6-cidr,2a0f:6284:8000::/40,proxy
+ip6-cidr,2a0f:6284:8000::/48,proxy
+ip6-cidr,2a0f:6284:8010::/45,proxy
 ip6-cidr,2a14:7583:e400::/40,proxy

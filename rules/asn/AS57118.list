@@ -2,8 +2,11 @@
 # Unsupported entries: 0; see reports/
 ip-cidr,185.104.19.0/24,proxy
 ip-cidr,185.72.236.0/23,proxy
-ip-cidr,185.95.216.0/22,proxy
+ip-cidr,185.95.216.0/24,proxy
+ip-cidr,185.95.218.0/23,proxy
 ip-cidr,91.199.218.0/24,proxy
 ip6-cidr,2001:67c:2d70::/48,proxy
 ip6-cidr,2a00:f740:400::/48,proxy
-ip6-cidr,2a05:fc80::/29,proxy
+ip6-cidr,2a05:fc80::/30,proxy
+ip6-cidr,2a05:fc84::/32,proxy
+ip6-cidr,2a05:fc86::/31,proxy

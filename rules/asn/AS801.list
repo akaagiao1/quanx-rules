@@ -3,6 +3,11 @@
 ip-cidr,35.100.0.0/19,proxy
 ip-cidr,35.100.32.0/21,proxy
 ip-cidr,35.100.40.0/23,proxy
+ip-cidr,35.101.0.0/19,proxy
+ip-cidr,35.101.32.0/21,proxy
+ip-cidr,35.101.40.0/22,proxy
+ip-cidr,35.101.44.0/23,proxy
+ip-cidr,35.101.46.0/24,proxy
 ip-cidr,35.102.0.0/19,proxy
 ip-cidr,35.102.32.0/20,proxy
 ip-cidr,35.102.48.0/22,proxy
@@ -45,6 +50,7 @@ ip-cidr,35.98.224.0/19,proxy
 ip-cidr,35.98.80.0/20,proxy
 ip-cidr,35.98.96.0/19,proxy
 ip-cidr,35.99.0.0/19,proxy
+ip-cidr,35.99.144.0/20,proxy
 ip-cidr,35.99.32.0/20,proxy
 ip-cidr,35.99.80.0/20,proxy
 ip-cidr,35.99.96.0/19,proxy
@@ -70,6 +76,7 @@ ip6-cidr,2631:0:400::/38,proxy
 ip6-cidr,2631:0:4600::/39,proxy
 ip6-cidr,2631:0:4::/48,proxy
 ip6-cidr,2631:0:4a00::/39,proxy
+ip6-cidr,2631:0:4c00::/39,proxy
 ip6-cidr,2631:0:800::/38,proxy
 ip6-cidr,2631:0:a::/48,proxy
 ip6-cidr,2631:0:e00::/39,proxy
@@ -80,6 +87,9 @@ ip6-cidr,2631:80:1400::/47,proxy
 ip6-cidr,2631:80:200::/44,proxy
 ip6-cidr,2631:80:210::/45,proxy
 ip6-cidr,2631:80:218::/48,proxy
+ip6-cidr,2631:80:400::/44,proxy
+ip6-cidr,2631:80:410::/46,proxy
+ip6-cidr,2631:80:414::/48,proxy
 ip6-cidr,2631:80:600::/47,proxy
 ip6-cidr,2631:80:800::/48,proxy
 ip6-cidr,2631:80::/44,proxy
