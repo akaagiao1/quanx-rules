@@ -32,6 +32,16 @@ Python 3.12：**33 项测试通过**，包含所有原有测试，以及 Surge �
 
 工作流保持一个，每天 UTC 00:30（北京时间 08:30）运行。双格式全部构建成功后才开始发布；发布到各自的 quanx 与 surge 分支，格式不匹配时拒绝推送。每次使用普通 Git 提交，不强制推送。工作流通过 actionlint 检查。
 
+两种格式各校验 84,834 个分类目录及订阅链接，均对应实际文件。最大规则集为 geo/geoip/us，261,288 条。
+
+## GitHub 部署验收
+
+[首次双格式更新 #41181495637](https://github.com/akaagiao1/quanx-rules/actions/runs/41181495637) 的 build 和 publish 均成功。产物提交：Surge `149d4731038a9d5616bc9f3e679e04f9b10226e6`，QuanX `3969fc7e9bdd17f254f87a84bf626db0f54cde95`。
+
+两个分支的公开 Raw 报告均确认来源快照为 `3a27e598be95d745b8652860b1337157a8822943`，分类数和规则数与本地验证一致。Surge 的 Google、Telegram IP、精简 OpenAI、AS13335、分类目录，以及原有 QuanX Google 地址均实际访问成功，首条规则的类型和字段数正确。
+
+独立只读代码审阅未发现 Critical、Important 或 Minor 问题；另行复核了全量清单一致性、旧 QuanX 内容兼容性和原生离线检查。实际在线路由与 QuanX 真机导入不在本次验证范围。
+
 ## 参考
 
 - [Surge RULE-SET 格式和单集条数限制](https://manual.nssurge.com/rules/ruleset.html)
