@@ -12,7 +12,7 @@ import tarfile
 import tempfile
 from urllib.parse import quote
 
-from .convert import ConversionError, convert_document
+from .convert import ConversionError, convert_document, get_format
 from .upstream import SHA_PATTERN
 
 FAMILIES = {"asn", "geo/geosite", "geo/geoip", "geo-lite/geosite", "geo-lite/geoip"}
@@ -26,6 +26,8 @@ def _json(path: Path, value):
 
 
 def check_removal(previous: dict, current: dict, allow_large_removal=False):
+    if previous.get("format", "quanx") != current.get("format", "quanx"):
+        raise ConversionError("refusing to replace output with a different client format")
     if not allow_large_removal and current["categories"] < previous["categories"] * 0.8:
         raise ConversionError("category count dropped by more than 20%; inspect upstream, then explicitly allow large removal")
 
@@ -46,7 +48,8 @@ def _category(member: tarfile.TarInfo, root: str) -> str | None:
     return relative
 
 
-def _scan(archive: Path, target: Path, sha: str):
+def _scan(archive: Path, target: Path, sha: str, output_format: str):
+    spec = get_format(output_format)
     records = defaultdict(list)
     seen = set()
     source_bytes = 0
@@ -66,10 +69,12 @@ def _scan(archive: Path, target: Path, sha: str):
                     raise ConversionError("upstream category count or size exceeds the documented resource limit")
                 try:
                     raw = source.extractfile(member).read()
-                    conversion = convert_document(json.loads(raw))
+                    conversion = convert_document(json.loads(raw), output_format=output_format)
                 except (ValueError, UnicodeError) as exc:
                     raise ConversionError(f"{name}: {exc}") from exc
                 count, skipped = len(conversion.lines), len(conversion.unsupported)
+                if spec.max_entries is not None and count > spec.max_entries:
+                    raise ConversionError(f"{name}: exceeds {spec.label}'s {spec.max_entries:,}-entry rule-set limit")
                 status = ("partial" if skipped else "supported") if count else ("unsupported-only" if skipped else "empty")
                 output_path = "rules/" + name[:-5] + ".list" if count else None
                 record = {"source": name, "source_sha256": hashlib.sha256(raw).hexdigest(),
@@ -97,13 +102,15 @@ def _scan(archive: Path, target: Path, sha: str):
     return records
 
 
-def _catalog(target, records, sha, repository):
+def _catalog(target, records, sha, repository, output_format):
+    spec = get_format(output_format)
+    usage = ("所有文件默认策略为 `proxy`；订阅时用 `force-policy` 指定自己的策略组。"
+             if output_format == "quanx" else "规则文件不含策略名；在配置的 `RULE-SET,URL,策略` 行指定策略。")
     statuses = Counter({status: 0 for status in STATUSES})
     manifests = []
     groups = {}
     rules = skipped = entries = 0
-    rows = ["# QuanX 全量分类目录", "", f"上游快照：`{sha}`", "",
-            "所有文件默认策略为 `proxy`；订阅时用 `force-policy` 指定自己的策略组。",
+    rows = [f"# {spec.label} 全量分类目录", "", f"上游快照：`{sha}`", "", usage,
             "partial 表示含无法转换的域名正则；unsupported-only 和 empty 不提供空订阅。", "",
             "| 分类组 | 分类数 | 目录 |", "| --- | ---: | --- |"]
     for group, items in sorted(records.items()):
@@ -123,7 +130,7 @@ def _catalog(target, records, sha, repository):
                 rules += item["rules"]
                 skipped += len(item["unsupported"])
                 entries += item["source_entries"]
-                url = f"https://raw.githubusercontent.com/{repository}/quanx/{quote(item['path'])}" if item["path"] else None
+                url = f"https://raw.githubusercontent.com/{repository}/{output_format}/{quote(item['path'])}" if item["path"] else None
                 label = item["source"].rsplit("/", 1)[-1][:-5]
                 link = f"[订阅]({url})" if url else "无可转换规则"
                 text.append(f"| {label} | {item['rules']} | {item['status']} | {link} |")
@@ -132,22 +139,26 @@ def _catalog(target, records, sha, repository):
             path.write_text("\n".join(text) + "\n", encoding="utf-8")
             links.append(f"[{number}]({quote(index_path)})")
         rows.append(f"| {group} | {len(items):,} | {' · '.join(links)} |")
-    summary = {"schema_version": 1, "upstream_repository": "MetaCubeX/meta-rules-dat", "source_sha": sha,
+    summary = {"schema_version": 1, "format": output_format, "upstream_repository": "MetaCubeX/meta-rules-dat", "source_sha": sha,
                "repository": repository, "categories": sum(groups.values()), "groups": groups,
                "statuses": dict(statuses), "output_files": statuses["supported"] + statuses["partial"],
                "output_rules": rules, "unsupported_entries": skipped, "source_entries": entries,
                "deduplicated_entries": entries - skipped - rules, "manifests": manifests}
     _json(target / "reports/summary.json", summary)
     (target / "index.md").write_text("\n".join(rows) + "\n", encoding="utf-8")
+    example_url = f"https://raw.githubusercontent.com/{repository}/{output_format}/rules/geo/geosite/google.list"
+    example = (f"[filter_remote]\n{example_url}, tag=Google, force-policy=proxy, enabled=true"
+               if output_format == "quanx" else f"[Rule]\nRULE-SET,{example_url},Proxy\nFINAL,DIRECT")
+    policy_help = ("使用时将 `proxy` 换成自己已有的策略组名称。" if output_format == "quanx"
+                   else "使用时将 `Proxy` 换成自己已有的策略组名称。")
     (target / "README.md").write_text(
-        f"# QuanX 自动更新规则\n\n[全部分类](index.md) · [同步报告](reports/summary.json) · "
+        f"# {spec.label} 自动更新规则\n\n[全部分类](index.md) · [同步报告](reports/summary.json) · "
         f"[使用说明](https://github.com/{repository})\n\n"
         f"分类：{summary['categories']:,}；订阅文件：{summary['output_files']:,}；"
         f"规则：{rules:,}；无法转换的域名正则：{skipped:,}。\n\n"
-        "每天北京时间 08:30 自动更新，GitHub 调度可能延迟。所有文件默认策略为 `proxy`。\n\n"
-        "```ini\n[filter_remote]\n"
-        f"https://raw.githubusercontent.com/{repository}/quanx/rules/geo/geosite/google.list, tag=Google, force-policy=proxy, enabled=true\n"
-        "```\n\n使用时将 `proxy` 换成自己已有的策略组名称。partial 分类仅含可转换部分，详见 reports 对应分页中的 unsupported 字段。\n\n"
+        f"每天北京时间 08:30 自动更新，GitHub 调度可能延迟。{usage}\n\n"
+        f"```ini\n{example}\n```\n\n{policy_help}"
+        "partial 分类仅含可转换部分，详见 reports 对应分页中的 unsupported 字段。\n\n"
         "来源：[MetaCubeX/meta-rules-dat](https://github.com/MetaCubeX/meta-rules-dat)。"
         "来源声明与许可证见 THIRD_PARTY.md 和 LICENSE。\n", encoding="utf-8")
     project = Path(__file__).resolve().parent.parent
@@ -160,6 +171,7 @@ def _catalog(target, records, sha, repository):
 def validate_output(output: Path) -> dict:
     output = Path(output)
     summary = json.loads((output / "reports/summary.json").read_text(encoding="utf-8"))
+    spec = get_format(summary.get("format", "quanx"))
     if summary["output_files"] <= 0 or summary["output_rules"] <= 0:
         raise ConversionError("refusing to publish a globally empty ruleset")
     seen = set()
@@ -187,12 +199,14 @@ def validate_output(output: Path) -> dict:
             lines = [line for line in data.decode("utf-8").splitlines() if not line.startswith("#")]
             if (hashlib.sha256(data).hexdigest() != item["sha256"] or not lines or len(lines) != item["rules"]):
                 raise ConversionError(f"rule file failed integrity validation: {item['path']}")
+            if spec.max_entries is not None and len(lines) > spec.max_entries:
+                raise ConversionError(f"rule file exceeds {spec.label}'s rule-set entry limit")
             for line in lines:
                 fields = line.split(",")
-                if len(fields) != 3 or fields[2] != "proxy" or fields[0] not in {
-                    "host", "host-suffix", "host-keyword", "host-wildcard", "ip-cidr", "ip6-cidr"
-                }:
-                    raise ConversionError(f"invalid QuanX rule: {line!r}")
+                if (len(fields) != (3 if spec.policy is not None else 2) or not fields[1]
+                        or (spec.policy is not None and fields[2] != spec.policy)
+                        or fields[0] not in spec.kinds.values()):
+                    raise ConversionError(f"invalid {spec.label} rule: {line!r}")
     actual_paths = {str(p.relative_to(output)) for p in (output / "rules").rglob("*.list")}
     if (len(seen) != summary["categories"] or len(paths) != summary["output_files"] or actual_paths != paths
             or dict(statuses) != summary["statuses"] or dict(groups) != summary["groups"]
@@ -202,7 +216,9 @@ def validate_output(output: Path) -> dict:
     return summary
 
 
-def build_archive(archive: Path, output: Path, sha: str, repository: str, *, allow_large_removal=False) -> dict:
+def build_archive(archive: Path, output: Path, sha: str, repository: str, *, allow_large_removal=False,
+                  output_format="quanx") -> dict:
+    get_format(output_format)
     if not SHA_PATTERN.fullmatch(sha) or not re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+", repository):
         raise ConversionError("invalid snapshot SHA or repository name")
     output = Path(output).resolve()
@@ -213,8 +229,8 @@ def build_archive(archive: Path, output: Path, sha: str, repository: str, *, all
     stage = Path(tempfile.mkdtemp(prefix=".quanx-stage-", dir=output.parent))
     try:
         try:
-            records = _scan(Path(archive), stage, sha)
-            summary = _catalog(stage, records, sha, repository)
+            records = _scan(Path(archive), stage, sha, output_format)
+            summary = _catalog(stage, records, sha, repository, output_format)
             validate_output(stage)
         except (OSError, EOFError, tarfile.TarError, ValueError) as exc:
             raise ConversionError(f"snapshot build failed: {exc}") from exc

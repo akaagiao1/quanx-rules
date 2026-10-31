@@ -6,11 +6,13 @@ from pathlib import Path
 import sys
 
 from .build import build_archive
+from .convert import FORMATS
 from .upstream import download_snapshot, resolve_snapshot
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Synchronize all MetaCubeX categories to QuanX")
+    parser = argparse.ArgumentParser(description="Synchronize all MetaCubeX categories to QuanX and Surge")
+    parser.add_argument("--format", choices=[*FORMATS, "all"], default="quanx", dest="output_format")
     parser.add_argument("--output", type=Path, default=Path("dist"))
     parser.add_argument("--repository", required=True, help="owner/repository for subscription URLs")
     parser.add_argument("--archive", type=Path, help="offline snapshot archive; requires --sha")
@@ -26,9 +28,12 @@ def main():
         if not args.archive:
             print(f"Downloading upstream commit {sha}", flush=True)
             download_snapshot(sha, source)
-        summary = build_archive(source, args.output, sha, args.repository,
-                                allow_large_removal=args.allow_large_removal)
-        print(json.dumps({key: value for key, value in summary.items() if key != "manifests"}, indent=2))
+        formats = list(FORMATS) if args.output_format == "all" else [args.output_format]
+        for name in formats:
+            output = args.output / name if args.output_format == "all" else args.output
+            summary = build_archive(source, output, sha, args.repository,
+                                    allow_large_removal=args.allow_large_removal, output_format=name)
+            print(json.dumps({key: value for key, value in summary.items() if key != "manifests"}, indent=2))
     except (OSError, ValueError) as exc:
         print(f"Synchronization failed: {exc}", file=sys.stderr)
         return 1

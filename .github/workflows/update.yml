@@ -1,4 +1,4 @@
-name: Update QuanX Rules
+name: Update QuanX and Surge Rules
 
 on:
   schedule:
@@ -50,18 +50,19 @@ jobs:
           if [[ "$ALLOW_LARGE_REMOVAL" == 'true' ]]; then
             flags+=(--allow-large-removal)
           fi
-          python -m quanx_rules --repository "$REPOSITORY" --output dist "${flags[@]}"
+          python -m quanx_rules --format all --repository "$REPOSITORY" --output dist "${flags[@]}"
       - name: Write synchronization summary
         if: github.event_name != 'pull_request'
         run: |
           python - <<'PY'
           import json, os
           from pathlib import Path
-          report = json.loads(Path('dist/reports/summary.json').read_text())
           with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as target:
-              target.write('## QuanX 全量同步\n\n')
-              for key in ('source_sha', 'categories', 'output_files', 'output_rules', 'unsupported_entries', 'statuses'):
-                  target.write(f'- **{key}**: `{report[key]}`\n')
+              for client in ('quanx', 'surge'):
+                  report = json.loads(Path(f'dist/{client}/reports/summary.json').read_text())
+                  target.write(f'## {client} 全量同步\n\n')
+                  for key in ('source_sha', 'categories', 'output_files', 'output_rules', 'unsupported_entries', 'statuses'):
+                      target.write(f'- **{key}**: `{report[key]}`\n')
               target.write('\n域名正则无法等价转换，原始表达式保留在产物 reports/ 的清单中。\n')
           PY
       - name: Package validated subscriptions
@@ -98,7 +99,7 @@ jobs:
         run: |
           mkdir dist
           tar -xzf artifact/quanx-rules.tar.gz -C dist
-      - name: Commit changes to quanx branch
+      - name: Commit changes to quanx and surge branches
         env:
           GH_TOKEN: ${{ github.token }}
           REPOSITORY: ${{ github.repository }}
@@ -109,4 +110,6 @@ jobs:
           if [[ "$ALLOW_LARGE_REMOVAL" == 'true' ]]; then
             flags+=(--allow-large-removal)
           fi
-          python -m quanx_rules.publish --output dist --remote "https://github.com/$REPOSITORY.git" "${flags[@]}"
+          for client in quanx surge; do
+            python -m quanx_rules.publish --output "dist/$client" --branch "$client" --remote "https://github.com/$REPOSITORY.git" "${flags[@]}"
+          done

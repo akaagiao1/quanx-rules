@@ -1,4 +1,4 @@
-"""Strict conversion of the subset of sing-box rules QuanX can express."""
+"""Strict conversion to QuanX filters or Surge RULE-SET entries."""
 
 from dataclasses import dataclass
 import ipaddress
@@ -7,6 +7,36 @@ import re
 
 class ConversionError(ValueError):
     """The input cannot be converted without changing its meaning."""
+
+
+@dataclass(frozen=True)
+class RuleFormat:
+    name: str
+    label: str
+    kinds: dict[str, str]
+    policy: str | None
+    max_entries: int | None = None
+
+    def render(self, kind: str, match: str) -> str:
+        fields = [self.kinds[kind], match]
+        if self.policy is not None:
+            fields.append(self.policy)
+        return ",".join(fields)
+
+
+_KINDS = ("host", "host-suffix", "host-keyword", "host-wildcard", "ip-cidr", "ip6-cidr")
+FORMATS = {
+    "quanx": RuleFormat("quanx", "QuanX", dict(zip(_KINDS, _KINDS)), "proxy"),
+    "surge": RuleFormat("surge", "Surge", dict(zip(_KINDS, (
+        "DOMAIN", "DOMAIN-SUFFIX", "DOMAIN-KEYWORD", "DOMAIN-WILDCARD", "IP-CIDR", "IP-CIDR6",
+    ))), None, 1_000_000),
+}
+
+
+def get_format(name: str) -> RuleFormat:
+    if name not in FORMATS:
+        raise ConversionError(f"unknown output format: {name!r}")
+    return FORMATS[name]
 
 
 @dataclass
@@ -36,12 +66,13 @@ def _domain(value: str) -> str:
     return result
 
 
-def convert_document(document: dict) -> Conversion:
+def convert_document(document: dict, *, output_format="quanx") -> Conversion:
     """Return deterministic filters and explicit omissions; reject unknown constraints.
 
     All currently supported fields belong to the same OR match group in a
     sing-box default rule. Additional constraints must never be flattened.
     """
+    spec = get_format(output_format)
     if (not isinstance(document, dict) or set(document) != {"version", "rules"}
             or type(document["version"]) is not int or document["version"] != 2
             or not isinstance(document["rules"], list)):
@@ -58,7 +89,7 @@ def convert_document(document: dict) -> Conversion:
                 count += 1
                 if field == "domain_regex":
                     unsupported.append({"field": field, "value": value,
-                                        "reason": "QuanX has no equivalent domain-regex routing filter"})
+                                        "reason": f"{spec.label} has no equivalent domain-regex routing filter"})
                     continue
                 if field == "ip_cidr":
                     try:
@@ -75,5 +106,5 @@ def convert_document(document: dict) -> Conversion:
                     kind, match = "host-wildcard", "*." + _domain(value[1:])
                 else:
                     kind, match = "host-suffix", _domain(value)
-                lines.add(f"{kind},{match},proxy")
+                lines.add(spec.render(kind, match))
     return Conversion(sorted(lines), sorted(unsupported, key=lambda x: (x["field"], x["value"])), count)

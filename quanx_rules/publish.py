@@ -10,6 +10,7 @@ import sys
 import tempfile
 
 from .build import check_removal, validate_output
+from .convert import ConversionError
 
 
 def _git(*args, cwd, allowed=(0,)):
@@ -22,9 +23,13 @@ def _git(*args, cwd, allowed=(0,)):
     return result
 
 
-def publish(output: Path, remote: str, branch="quanx", *, allow_large_removal=False) -> bool:
+def publish(output: Path, remote: str, branch=None, *, allow_large_removal=False) -> bool:
     output = Path(output).resolve()
     summary = validate_output(output)
+    output_format = summary.get("format", "quanx")
+    branch = branch or output_format
+    if branch != output_format:
+        raise ConversionError(f"{output_format} output must be published to the {output_format} branch")
     with tempfile.TemporaryDirectory(prefix="quanx-publish-") as temp:
         checkout = Path(temp)
         _git("check-ref-format", "--branch", branch, cwd=checkout)
@@ -59,10 +64,10 @@ def publish(output: Path, remote: str, branch="quanx", *, allow_large_removal=Fa
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Publish validated QuanX subscriptions")
+    parser = argparse.ArgumentParser(description="Publish validated QuanX or Surge subscriptions")
     parser.add_argument("--output", type=Path, default=Path("dist"))
     parser.add_argument("--remote", required=True)
-    parser.add_argument("--branch", default="quanx")
+    parser.add_argument("--branch", help="defaults to the output format; must match it")
     parser.add_argument("--allow-large-removal", action="store_true")
     args = parser.parse_args()
     try:
