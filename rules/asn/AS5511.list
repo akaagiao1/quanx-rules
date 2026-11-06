@@ -1,6 +1,8 @@
 # Source: MetaCubeX/meta-rules-dat/sing/asn/AS5511.json
 # Unsupported entries: 0; see reports/
 ip-cidr,102.129.157.0/24,proxy
+ip-cidr,102.210.61.0/24,proxy
+ip-cidr,102.210.62.0/23,proxy
 ip-cidr,102.212.56.0/22,proxy
 ip-cidr,104.164.82.0/24,proxy
 ip-cidr,104.164.89.0/24,proxy
@@ -333,6 +335,7 @@ ip-cidr,212.46.43.0/24,proxy
 ip-cidr,212.56.51.0/24,proxy
 ip-cidr,212.56.55.0/24,proxy
 ip-cidr,212.69.1.0/24,proxy
+ip-cidr,212.87.200.0/24,proxy
 ip-cidr,213.137.89.0/24,proxy
 ip-cidr,213.137.91.0/24,proxy
 ip-cidr,213.249.88.0/24,proxy
@@ -375,6 +378,7 @@ ip-cidr,45.139.230.0/24,proxy
 ip-cidr,45.139.32.0/24,proxy
 ip-cidr,45.139.34.0/24,proxy
 ip-cidr,45.140.214.0/24,proxy
+ip-cidr,45.140.59.0/24,proxy
 ip-cidr,45.140.68.0/24,proxy
 ip-cidr,45.140.70.0/24,proxy
 ip-cidr,45.141.48.0/24,proxy
@@ -391,6 +395,7 @@ ip-cidr,45.147.156.0/23,proxy
 ip-cidr,45.147.158.0/24,proxy
 ip-cidr,45.149.26.0/24,proxy
 ip-cidr,45.151.252.0/22,proxy
+ip-cidr,45.154.104.0/24,proxy
 ip-cidr,45.156.157.0/24,proxy
 ip-cidr,45.159.247.0/24,proxy
 ip-cidr,45.39.184.0/24,proxy
@@ -481,7 +486,6 @@ ip-cidr,51.241.218.0/24,proxy
 ip-cidr,51.241.255.0/24,proxy
 ip-cidr,62.100.216.0/22,proxy
 ip-cidr,62.112.206.0/24,proxy
-ip-cidr,62.217.16.0/23,proxy
 ip-cidr,62.217.19.0/24,proxy
 ip-cidr,62.217.21.0/24,proxy
 ip-cidr,62.217.23.0/24,proxy
@@ -652,10 +656,12 @@ ip-cidr,91.108.88.0/21,proxy
 ip-cidr,91.124.244.0/22,proxy
 ip-cidr,91.124.248.0/22,proxy
 ip-cidr,91.132.225.0/24,proxy
+ip-cidr,91.142.133.0/24,proxy
 ip-cidr,91.190.104.0/24,proxy
 ip-cidr,91.190.96.0/24,proxy
 ip-cidr,91.190.99.0/24,proxy
 ip-cidr,91.193.252.0/24,proxy
+ip-cidr,91.193.74.0/24,proxy
 ip-cidr,91.200.254.0/23,proxy
 ip-cidr,91.212.122.0/24,proxy
 ip-cidr,91.217.250.0/24,proxy
@@ -672,6 +678,8 @@ ip-cidr,92.113.4.0/24,proxy
 ip-cidr,92.61.102.0/24,proxy
 ip-cidr,93.114.195.0/24,proxy
 ip-cidr,93.114.246.0/24,proxy
+ip-cidr,93.123.112.0/24,proxy
+ip-cidr,93.123.115.0/24,proxy
 ip-cidr,93.92.20.0/24,proxy
 ip-cidr,94.116.24.0/21,proxy
 ip-cidr,94.192.40.0/22,proxy

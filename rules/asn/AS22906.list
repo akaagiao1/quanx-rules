@@ -1,5 +1,7 @@
 # Source: MetaCubeX/meta-rules-dat/sing/asn/AS22906.json
 # Unsupported entries: 0; see reports/
-ip-cidr,199.169.192.0/21,proxy
+ip-cidr,199.169.194.0/23,proxy
+ip-cidr,199.169.196.0/24,proxy
+ip-cidr,199.169.198.0/24,proxy
 ip6-cidr,2605:3100:fffb::/48,proxy
-ip6-cidr,2605:3100:fffc::/47,proxy
+ip6-cidr,2605:3100:fffc::/48,proxy

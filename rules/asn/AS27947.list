@@ -1,5 +1,6 @@
 # Source: MetaCubeX/meta-rules-dat/sing/asn/AS27947.json
 # Unsupported entries: 0; see reports/
+ip-cidr,154.197.111.0/24,proxy
 ip-cidr,154.198.172.0/24,proxy
 ip-cidr,156.239.192.0/22,proxy
 ip-cidr,157.100.0.0/19,proxy
@@ -67,6 +68,7 @@ ip-cidr,206.165.204.0/23,proxy
 ip-cidr,207.226.25.0/24,proxy
 ip-cidr,23.219.144.0/22,proxy
 ip-cidr,45.194.29.0/24,proxy
+ip-cidr,45.195.132.0/24,proxy
 ip-cidr,64.46.64.0/19,proxy
 ip-cidr,69.65.128.0/19,proxy
 ip6-cidr,2800:2a0:1000::/36,proxy
@@ -144,14 +146,20 @@ ip6-cidr,2800:bf0:2811::/48,proxy
 ip6-cidr,2800:bf0:2812::/47,proxy
 ip6-cidr,2800:bf0:2814::/46,proxy
 ip6-cidr,2800:bf0:2818::/45,proxy
-ip6-cidr,2800:bf0:2823::/48,proxy
+ip6-cidr,2800:bf0:2821::/48,proxy
+ip6-cidr,2800:bf0:2822::/47,proxy
 ip6-cidr,2800:bf0:2824::/47,proxy
-ip6-cidr,2800:bf0:282a::/47,proxy
+ip6-cidr,2800:bf0:2828::/46,proxy
 ip6-cidr,2800:bf0:282d::/48,proxy
-ip6-cidr,2800:bf0:282f::/48,proxy
+ip6-cidr,2800:bf0:282e::/47,proxy
+ip6-cidr,2800:bf0:2832::/47,proxy
+ip6-cidr,2800:bf0:2834::/46,proxy
+ip6-cidr,2800:bf0:2838::/45,proxy
 ip6-cidr,2800:bf0:2840::/42,proxy
 ip6-cidr,2800:bf0:2880::/41,proxy
 ip6-cidr,2800:bf0:2900::/40,proxy
+ip6-cidr,2800:bf0:2a01::/48,proxy
+ip6-cidr,2800:bf0:2a03::/48,proxy
 ip6-cidr,2800:bf0:2a04::/46,proxy
 ip6-cidr,2800:bf0:2a09::/48,proxy
 ip6-cidr,2800:bf0:2a0b::/48,proxy
@@ -197,7 +205,7 @@ ip6-cidr,2800:bf0:3008::/46,proxy
 ip6-cidr,2800:bf0:300c::/47,proxy
 ip6-cidr,2800:bf0:3010::/44,proxy
 ip6-cidr,2800:bf0:3020::/43,proxy
-ip6-cidr,2800:bf0:3046::/47,proxy
+ip6-cidr,2800:bf0:3047::/48,proxy
 ip6-cidr,2800:bf0:3048::/45,proxy
 ip6-cidr,2800:bf0:3050::/44,proxy
 ip6-cidr,2800:bf0:3060::/43,proxy
@@ -640,10 +648,6 @@ ip6-cidr,2800:bf0:ac11::/48,proxy
 ip6-cidr,2800:bf0:ac13::/48,proxy
 ip6-cidr,2800:bf0:ac14::/46,proxy
 ip6-cidr,2800:bf0:ac18::/45,proxy
-ip6-cidr,2800:bf0:ac26::/48,proxy
-ip6-cidr,2800:bf0:ac2a::/48,proxy
-ip6-cidr,2800:bf0:ac2d::/48,proxy
-ip6-cidr,2800:bf0:ac3a::/47,proxy
 ip6-cidr,2800:bf0:ac3c::/46,proxy
 ip6-cidr,2800:bf0:ac42::/47,proxy
 ip6-cidr,2800:bf0:ac44::/46,proxy
@@ -669,7 +673,10 @@ ip6-cidr,2800:bf0:acf1::/48,proxy
 ip6-cidr,2800:bf0:acf2::/47,proxy
 ip6-cidr,2800:bf0:acf4::/46,proxy
 ip6-cidr,2800:bf0:acf8::/45,proxy
-ip6-cidr,2800:bf0:ad00::/44,proxy
+ip6-cidr,2800:bf0:ad01::/48,proxy
+ip6-cidr,2800:bf0:ad02::/47,proxy
+ip6-cidr,2800:bf0:ad04::/46,proxy
+ip6-cidr,2800:bf0:ad08::/45,proxy
 ip6-cidr,2800:bf0:ad11::/48,proxy
 ip6-cidr,2800:bf0:ad12::/47,proxy
 ip6-cidr,2800:bf0:ad14::/46,proxy
@@ -775,9 +782,7 @@ ip6-cidr,2800:bf0:b442::/47,proxy
 ip6-cidr,2800:bf0:b444::/46,proxy
 ip6-cidr,2800:bf0:b448::/45,proxy
 ip6-cidr,2800:bf0:b450::/44,proxy
-ip6-cidr,2800:bf0:b462::/47,proxy
-ip6-cidr,2800:bf0:b465::/48,proxy
-ip6-cidr,2800:bf0:b466::/47,proxy
+ip6-cidr,2800:bf0:b467::/48,proxy
 ip6-cidr,2800:bf0:b468::/45,proxy
 ip6-cidr,2800:bf0:b470::/44,proxy
 ip6-cidr,2800:bf0:b480::/48,proxy
@@ -807,6 +812,8 @@ ip6-cidr,2800:bf0:b525::/48,proxy
 ip6-cidr,2800:bf0:b526::/47,proxy
 ip6-cidr,2800:bf0:b528::/45,proxy
 ip6-cidr,2800:bf0:b531::/48,proxy
+ip6-cidr,2800:bf0:b533::/48,proxy
+ip6-cidr,2800:bf0:b537::/48,proxy
 ip6-cidr,2800:bf0:b538::/45,proxy
 ip6-cidr,2800:bf0:b542::/47,proxy
 ip6-cidr,2800:bf0:b544::/46,proxy
@@ -818,7 +825,8 @@ ip6-cidr,2800:bf0:b558::/45,proxy
 ip6-cidr,2800:bf0:b566::/47,proxy
 ip6-cidr,2800:bf0:b568::/45,proxy
 ip6-cidr,2800:bf0:b570::/44,proxy
-ip6-cidr,2800:bf0:b580::/46,proxy
+ip6-cidr,2800:bf0:b580::/48,proxy
+ip6-cidr,2800:bf0:b582::/47,proxy
 ip6-cidr,2800:bf0:b585::/48,proxy
 ip6-cidr,2800:bf0:b586::/48,proxy
 ip6-cidr,2800:bf0:b588::/48,proxy
