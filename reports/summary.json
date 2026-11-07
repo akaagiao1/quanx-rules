@@ -1,5 +1,5 @@
 {
-  "categories": 85519,
+  "categories": 85521,
   "deduplicated_entries": 949,
   "format": "quanx",
   "groups": {
@@ -7,7 +7,7 @@
     "geo-lite/geoip": 12,
     "geo-lite/geosite": 24,
     "geo/geoip": 260,
-    "geo/geosite": 2019
+    "geo/geosite": 2021
   },
   "manifests": [
     "reports/asn/0001.json",
@@ -101,16 +101,16 @@
     "reports/geo/geosite/0002.json",
     "reports/geo/geosite/0003.json"
   ],
-  "output_files": 85510,
-  "output_rules": 2411530,
+  "output_files": 85512,
+  "output_rules": 2411461,
   "repository": "akaagiao1/quanx-rules",
   "schema_version": 1,
-  "source_entries": 2412884,
-  "source_sha": "7da04853058c4a8858f339b266353fc905ef4eb4",
+  "source_entries": 2412815,
+  "source_sha": "d5db7761ed1fbb5a307c3435cb7e395c3115ac53",
   "statuses": {
     "empty": 0,
     "partial": 57,
-    "supported": 85453,
+    "supported": 85455,
     "unsupported-only": 9
   },
   "unsupported_entries": 405,
