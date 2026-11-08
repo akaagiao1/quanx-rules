@@ -19,8 +19,10 @@ host,copilotprodattachments.blob.core.windows.net,proxy
 host,daily-cloudcode-pa.googleapis.com,proxy
 host,geminiweb-pa.clients.google.com,proxy
 host,geminiweb-pa.clients6.google.com,proxy
+host,http-intake.logs.us5.datadoghq.com,proxy
 host,notebooklm-pa.googleapis.com,proxy
 host,notebooklm.googleapis.com,proxy
+host,o1158394.ingest.us.sentry.io,proxy
 host,o33249.ingest.sentry.io,proxy
 host,o33249.ingest.us.sentry.io,proxy
 host,openai.qualtrics.com,proxy
@@ -31,6 +33,7 @@ host,openaicom.imgix.net,proxy
 host,openaicomproductionae4b.blob.core.windows.net,proxy
 host,ppl-ai-file-upload.s3.amazonaws.com,proxy
 host,pplx-res.cloudinary.com,proxy
+host,production-copilot-host-westus.webpubsub.azure.com,proxy
 host,production-openaicom-storage.azureedge.net,proxy
 host,servd-anthropic-website.b-cdn.net,proxy
 host,webchannel-alkalimakersuite-pa.clients6.google.com,proxy
@@ -129,6 +132,7 @@ host-suffix,grazie.ai,proxy
 host-suffix,grazie.aws.intellij.net,proxy
 host-suffix,grok.com,proxy
 host-suffix,grok.x.com,proxy
+host-suffix,grokbot.com,proxy
 host-suffix,grokipedia.com,proxy
 host-suffix,groq.com,proxy
 host-suffix,h2o.ai,proxy
