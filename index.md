@@ -1,6 +1,6 @@
 # Surge 全量分类目录
 
-上游快照：`553607380d68f223cbcc70a101dc80b9b2285df1`
+上游快照：`4c5e2f241a542a463fc267cb2b807a22b76eae56`
 
 规则文件不含策略名；在配置的 `RULE-SET,URL,策略` 行指定策略。
 partial 表示含无法转换的域名正则；unsupported-only 和 empty 不提供空订阅。
@@ -11,4 +11,4 @@ partial 表示含无法转换的域名正则；unsupported-only 和 empty 不提
 | geo-lite/geoip | 12 | [1](indexes/geo-lite/geoip/0001.md) |
 | geo-lite/geosite | 24 | [1](indexes/geo-lite/geosite/0001.md) |
 | geo/geoip | 260 | [1](indexes/geo/geoip/0001.md) |
-| geo/geosite | 2,022 | [1](indexes/geo/geosite/0001.md) · [2](indexes/geo/geosite/0002.md) · [3](indexes/geo/geosite/0003.md) |
+| geo/geosite | 2,023 | [1](indexes/geo/geosite/0001.md) · [2](indexes/geo/geosite/0002.md) · [3](indexes/geo/geosite/0003.md) |
