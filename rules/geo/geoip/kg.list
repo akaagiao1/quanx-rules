@@ -1,8 +1,7 @@
 # Source: MetaCubeX/meta-rules-dat/sing/geo/geoip/kg.json
 # Unsupported entries: 0; see reports/
 ip-cidr,103.195.144.0/24,proxy
-ip-cidr,104.164.91.0/24,proxy
-ip-cidr,104.165.48.0/24,proxy
+ip-cidr,104.156.196.0/22,proxy
 ip-cidr,104.28.11.124/31,proxy
 ip-cidr,104.28.11.126/32,proxy
 ip-cidr,104.28.138.52/32,proxy
@@ -78,7 +77,6 @@ ip-cidr,164.137.65.0/24,proxy
 ip-cidr,166.0.209.0/24,proxy
 ip-cidr,168.113.228.0/24,proxy
 ip-cidr,170.168.154.0/24,proxy
-ip-cidr,170.168.54.0/23,proxy
 ip-cidr,172.225.174.128/28,proxy
 ip-cidr,172.225.182.160/27,proxy
 ip-cidr,172.225.200.48/28,proxy
@@ -234,7 +232,15 @@ ip-cidr,94.232.40.168/29,proxy
 ip-cidr,94.232.40.176/28,proxy
 ip-cidr,94.232.40.192/26,proxy
 ip-cidr,94.232.41.0/24,proxy
-ip-cidr,94.232.42.0/23,proxy
+ip-cidr,94.232.42.0/24,proxy
+ip-cidr,94.232.43.0/28,proxy
+ip-cidr,94.232.43.128/25,proxy
+ip-cidr,94.232.43.16/29,proxy
+ip-cidr,94.232.43.24/30,proxy
+ip-cidr,94.232.43.29/32,proxy
+ip-cidr,94.232.43.30/31,proxy
+ip-cidr,94.232.43.32/27,proxy
+ip-cidr,94.232.43.64/26,proxy
 ip-cidr,94.232.44.0/22,proxy
 ip-cidr,95.130.231.0/24,proxy
 ip-cidr,95.215.244.0/22,proxy
