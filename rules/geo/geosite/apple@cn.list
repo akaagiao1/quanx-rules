@@ -66,6 +66,7 @@ host,cn-smp-paymentservices.apple.com,proxy
 host,communities.apple.com,proxy
 host,configuration.apple.com,proxy
 host,configuration.apple.com.akadns.net,proxy
+host,configuration.ls.apple.com,proxy
 host,crl-lb.apple.com.akadns.net,proxy
 host,crl.apple.com,proxy
 host,cstat.apple.com,proxy
@@ -149,9 +150,11 @@ host,mesu.apple.com,proxy
 host,misc-assets.itunes.apple.com,proxy
 host,ml.cdn-apple.com,proxy
 host,music.apple.com,proxy
+host,musicstatus.itunes.apple.com,proxy
 host,musicstatus.music.apple.com,proxy
 host,mvod.itunes.apple.com,proxy
 host,myapp.itunes.apple.com,proxy
+host,mzstorekit.itunes.apple.com,proxy
 host,np-edge.itunes.apple.com,proxy
 host,ocsp.apple.com,proxy
 host,ocsp2.apple.com,proxy
@@ -272,6 +275,7 @@ host-suffix,beats4.cn,proxy
 host-suffix,beatsbydre.com,proxy
 host-suffix,beatsbydre.com.cn,proxy
 host-suffix,beatsep.cn,proxy
+host-suffix,captive.apple.com,proxy
 host-suffix,ecgapp.com.cn,proxy
 host-suffix,faceshift.cn,proxy
 host-suffix,homepod.cn,proxy
