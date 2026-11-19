@@ -125,7 +125,6 @@ ip-cidr,102.212.232.0/22,proxy
 ip-cidr,102.212.240.0/22,proxy
 ip-cidr,102.212.252.0/22,proxy
 ip-cidr,102.212.40.0/22,proxy
-ip-cidr,102.212.80.0/24,proxy
 ip-cidr,102.213.18.0/23,proxy
 ip-cidr,102.213.243.0/24,proxy
 ip-cidr,102.213.76.0/22,proxy
@@ -198,7 +197,6 @@ ip-cidr,102.222.72.0/24,proxy
 ip-cidr,102.222.96.0/22,proxy
 ip-cidr,102.223.1.0/24,proxy
 ip-cidr,102.223.101.0/24,proxy
-ip-cidr,102.223.180.0/23,proxy
 ip-cidr,102.223.255.0/24,proxy
 ip-cidr,102.223.36.0/22,proxy
 ip-cidr,102.223.52.0/23,proxy
@@ -579,11 +577,14 @@ ip-cidr,146.75.174.130/31,proxy
 ip-cidr,146.75.174.132/31,proxy
 ip-cidr,146.75.185.152/30,proxy
 ip-cidr,146.92.38.0/24,proxy
+ip-cidr,149.11.142.108/31,proxy
 ip-cidr,149.126.9.176/29,proxy
 ip-cidr,149.6.145.136/29,proxy
 ip-cidr,15.103.0.0/20,proxy
 ip-cidr,15.103.16.0/21,proxy
 ip-cidr,150.107.126.0/24,proxy
+ip-cidr,151.186.145.61/32,proxy
+ip-cidr,151.186.147.48/32,proxy
 ip-cidr,152.32.140.0/22,proxy
 ip-cidr,153.67.70.0/23,proxy
 ip-cidr,154.113.0.0/20,proxy
@@ -644,6 +645,7 @@ ip-cidr,157.167.240.90/32,proxy
 ip-cidr,158.255.76.0/24,proxy
 ip-cidr,158.26.160.0/21,proxy
 ip-cidr,158.95.136.0/23,proxy
+ip-cidr,159.234.184.128/25,proxy
 ip-cidr,159.26.127.120/30,proxy
 ip-cidr,160.119.124.0/22,proxy
 ip-cidr,160.119.196.0/23,proxy
@@ -802,7 +804,6 @@ ip-cidr,196.40.160.0/20,proxy
 ip-cidr,196.40.192.0/18,proxy
 ip-cidr,196.41.80.0/24,proxy
 ip-cidr,196.41.84.0/24,proxy
-ip-cidr,196.41.94.0/24,proxy
 ip-cidr,196.43.215.0/24,proxy
 ip-cidr,196.43.232.0/24,proxy
 ip-cidr,196.43.235.0/24,proxy
@@ -849,7 +850,6 @@ ip-cidr,197.157.216.0/22,proxy
 ip-cidr,197.159.64.0/20,proxy
 ip-cidr,197.210.0.0/16,proxy
 ip-cidr,197.211.32.0/19,proxy
-ip-cidr,197.214.50.0/24,proxy
 ip-cidr,197.214.56.0/24,proxy
 ip-cidr,197.214.58.0/23,proxy
 ip-cidr,197.214.96.0/20,proxy
@@ -1064,8 +1064,6 @@ ip-cidr,41.78.252.0/22,proxy
 ip-cidr,41.78.8.0/22,proxy
 ip-cidr,41.78.80.0/22,proxy
 ip-cidr,41.78.88.0/22,proxy
-ip-cidr,41.79.116.0/22,proxy
-ip-cidr,41.79.152.0/22,proxy
 ip-cidr,41.79.204.0/22,proxy
 ip-cidr,41.79.4.0/22,proxy
 ip-cidr,41.79.64.0/22,proxy
@@ -1564,7 +1562,6 @@ ip6-cidr,2a0f:1cc5:740::/44,proxy
 ip6-cidr,2a0f:e381::/32,proxy
 ip6-cidr,2a10:500:2f00::/40,proxy
 ip6-cidr,2a10:9007:1:1::/64,proxy
-ip6-cidr,2a14:67c2:8be::/48,proxy
 ip6-cidr,2a14:7581:5915::/48,proxy
 ip6-cidr,2a14:7581:c090::/44,proxy
 ip6-cidr,2c0f:1080::/32,proxy
@@ -1593,7 +1590,6 @@ ip6-cidr,2c0f:3b80::/32,proxy
 ip6-cidr,2c0f:3d80::/32,proxy
 ip6-cidr,2c0f:3e80::/32,proxy
 ip6-cidr,2c0f:4180::/32,proxy
-ip6-cidr,2c0f:4380::/32,proxy
 ip6-cidr,2c0f:45c0::/32,proxy
 ip6-cidr,2c0f:4720::/32,proxy
 ip6-cidr,2c0f:4800::/32,proxy

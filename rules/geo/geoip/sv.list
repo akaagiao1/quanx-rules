@@ -43,6 +43,9 @@ ip-cidr,131.100.140.0/22,proxy
 ip-cidr,131.196.32.10/32,proxy
 ip-cidr,132.255.208.0/22,proxy
 ip-cidr,134.82.73.32/29,proxy
+ip-cidr,136.22.25.213/32,proxy
+ip-cidr,136.23.40.215/32,proxy
+ip-cidr,136.23.8.219/32,proxy
 ip-cidr,138.186.248.0/22,proxy
 ip-cidr,138.219.12.0/22,proxy
 ip-cidr,138.219.156.0/22,proxy
@@ -129,6 +132,7 @@ ip-cidr,172.225.33.192/27,proxy
 ip-cidr,172.225.93.192/29,proxy
 ip-cidr,172.225.93.48/28,proxy
 ip-cidr,178.19.42.0/23,proxy
+ip-cidr,179.238.182.0/23,proxy
 ip-cidr,179.5.0.0/16,proxy
 ip-cidr,179.51.0.0/18,proxy
 ip-cidr,181.119.230.0/23,proxy
@@ -182,6 +186,7 @@ ip-cidr,190.98.157.28/30,proxy
 ip-cidr,190.99.24.0/21,proxy
 ip-cidr,190.99.32.0/19,proxy
 ip-cidr,198.228.97.30/32,proxy
+ip-cidr,2.152.200.0/22,proxy
 ip-cidr,200.0.180.0/24,proxy
 ip-cidr,200.106.224.0/20,proxy
 ip-cidr,200.107.207.0/24,proxy
@@ -226,8 +231,7 @@ ip-cidr,209.124.102.0/24,proxy
 ip-cidr,209.124.108.0/23,proxy
 ip-cidr,209.124.113.0/24,proxy
 ip-cidr,209.124.114.0/23,proxy
-ip-cidr,209.124.116.0/24,proxy
-ip-cidr,209.124.118.0/23,proxy
+ip-cidr,209.124.116.0/22,proxy
 ip-cidr,209.124.126.0/23,proxy
 ip-cidr,209.124.98.0/23,proxy
 ip-cidr,209.170.100.32/28,proxy
@@ -247,6 +251,7 @@ ip-cidr,38.46.244.0/22,proxy
 ip-cidr,38.56.208.0/22,proxy
 ip-cidr,38.7.12.0/22,proxy
 ip-cidr,38.78.158.0/24,proxy
+ip-cidr,41.180.152.0/24,proxy
 ip-cidr,45.15.177.28/30,proxy
 ip-cidr,45.15.177.92/30,proxy
 ip-cidr,45.152.216.0/22,proxy
@@ -311,6 +316,9 @@ ip6-cidr,2001:470:fe91::/48,proxy
 ip6-cidr,2401:3620:232:d4::/64,proxy
 ip6-cidr,2606:40:205e:c000::/54,proxy
 ip6-cidr,2606:40:214c:4000::/54,proxy
+ip6-cidr,2606:40:2393:6c00::/54,proxy
+ip6-cidr,2606:40:3:5c00::/54,proxy
+ip6-cidr,2606:40:67:5400::/54,proxy
 ip6-cidr,2606:54c0:5560::/44,proxy
 ip6-cidr,2606:54c0:5570::/45,proxy
 ip6-cidr,2606:54c1:1:28a::/64,proxy
@@ -444,4 +452,3 @@ ip6-cidr,2a0a:6044:6798::/47,proxy
 ip6-cidr,2a0a:6044:679a::/48,proxy
 ip6-cidr,2a0b:4e07:3:2220::/60,proxy
 ip6-cidr,2a10:9007:3:c::/64,proxy
-ip6-cidr,2a14:67c2:880::/48,proxy

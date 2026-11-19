@@ -1,6 +1,5 @@
 # Source: MetaCubeX/meta-rules-dat/sing/geo/geoip/ad.json
 # Unsupported entries: 0; see reports/
-ip-cidr,102.206.49.0/24,proxy
 ip-cidr,102.38.225.0/24,proxy
 ip-cidr,104.28.194.44/30,proxy
 ip-cidr,104.28.194.48/30,proxy
@@ -56,6 +55,7 @@ ip-cidr,134.82.75.160/29,proxy
 ip-cidr,135.136.16.0/25,proxy
 ip-cidr,136.227.141.160/30,proxy
 ip-cidr,136.227.141.164/31,proxy
+ip-cidr,136.23.26.80/32,proxy
 ip-cidr,136.234.207.0/24,proxy
 ip-cidr,137.83.225.29/32,proxy
 ip-cidr,137.83.225.30/31,proxy
@@ -93,6 +93,8 @@ ip-cidr,151.186.154.108/32,proxy
 ip-cidr,151.186.154.42/32,proxy
 ip-cidr,153.72.34.192/26,proxy
 ip-cidr,157.167.111.0/24,proxy
+ip-cidr,162.120.131.50/32,proxy
+ip-cidr,162.120.161.192/32,proxy
 ip-cidr,162.120.204.64/32,proxy
 ip-cidr,162.120.210.0/32,proxy
 ip-cidr,163.116.163.158/31,proxy
@@ -137,7 +139,6 @@ ip-cidr,188.220.164.0/24,proxy
 ip-cidr,188.241.26.0/23,proxy
 ip-cidr,193.227.113.0/24,proxy
 ip-cidr,194.158.64.0/19,proxy
-ip-cidr,194.50.99.1/32,proxy
 ip-cidr,195.123.237.47/32,proxy
 ip-cidr,2.152.216.0/21,proxy
 ip-cidr,202.181.129.176/29,proxy
@@ -311,8 +312,11 @@ ip6-cidr,2001:470:ef14::/48,proxy
 ip6-cidr,2001:470:fc96::/48,proxy
 ip6-cidr,2001:470:ffd6::/48,proxy
 ip6-cidr,2401:3620:232:b::/64,proxy
+ip6-cidr,2606:40:2207::/54,proxy
 ip6-cidr,2606:40:2240::/54,proxy
 ip6-cidr,2606:40:22e0::/54,proxy
+ip6-cidr,2606:40:c9:4000::/54,proxy
+ip6-cidr,2606:40:f0:c800::/54,proxy
 ip6-cidr,2606:54c0::/45,proxy
 ip6-cidr,2606:54c1:1:47::/64,proxy
 ip6-cidr,2606:54c3:0:18ed::/64,proxy
@@ -380,6 +384,4 @@ ip6-cidr,2a0e:ec05:8100::/41,proxy
 ip6-cidr,2a0e:ec05:8180::/42,proxy
 ip6-cidr,2a0f:85c1:e2e::/48,proxy
 ip6-cidr,2a12:ef85::/36,proxy
-ip6-cidr,2a14:67c2:897::/48,proxy
-ip6-cidr,2a14:67c3:419::/48,proxy
 ip6-cidr,2a14:7581:5916::/48,proxy

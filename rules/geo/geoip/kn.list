@@ -22,6 +22,9 @@ ip-cidr,104.28.92.130/31,proxy
 ip-cidr,104.28.94.130/31,proxy
 ip-cidr,104.29.207.83/32,proxy
 ip-cidr,104.29.207.84/32,proxy
+ip-cidr,136.22.25.203/32,proxy
+ip-cidr,136.23.40.206/32,proxy
+ip-cidr,136.23.8.211/32,proxy
 ip-cidr,140.248.12.26/31,proxy
 ip-cidr,140.248.44.66/31,proxy
 ip-cidr,140.248.56.119/32,proxy
@@ -52,7 +55,7 @@ ip-cidr,173.249.168.0/22,proxy
 ip-cidr,188.191.144.0/24,proxy
 ip-cidr,196.1.168.0/22,proxy
 ip-cidr,199.21.164.0/22,proxy
-ip-cidr,200.50.84.0/24,proxy
+ip-cidr,200.50.84.0/23,proxy
 ip-cidr,204.137.192.0/19,proxy
 ip-cidr,204.14.254.0/24,proxy
 ip-cidr,204.16.8.0/22,proxy
@@ -61,6 +64,7 @@ ip-cidr,205.214.202.0/23,proxy
 ip-cidr,205.214.204.0/24,proxy
 ip-cidr,205.217.224.0/22,proxy
 ip-cidr,205.217.240.0/22,proxy
+ip-cidr,206.214.13.0/24,proxy
 ip-cidr,207.167.92.0/22,proxy
 ip-cidr,208.70.92.0/22,proxy
 ip-cidr,208.72.230.0/24,proxy
@@ -70,7 +74,7 @@ ip-cidr,209.236.54.0/23,proxy
 ip-cidr,209.59.112.0/21,proxy
 ip-cidr,209.59.64.0/21,proxy
 ip-cidr,209.59.72.0/22,proxy
-ip-cidr,209.59.80.0/22,proxy
+ip-cidr,209.59.83.113/32,proxy
 ip-cidr,209.59.91.0/25,proxy
 ip-cidr,216.211.197.0/24,proxy
 ip-cidr,23.131.208.0/24,proxy
@@ -86,7 +90,7 @@ ip-cidr,69.57.238.0/24,proxy
 ip-cidr,69.57.252.0/22,proxy
 ip-cidr,76.76.168.0/22,proxy
 ip-cidr,76.76.180.0/24,proxy
-ip-cidr,76.76.190.0/23,proxy
+ip-cidr,76.76.184.0/21,proxy
 ip-cidr,85.137.181.0/24,proxy
 ip-cidr,89.39.66.0/24,proxy
 ip-cidr,94.192.73.158/31,proxy
@@ -111,6 +115,9 @@ ip6-cidr,2605:59c0:7300::/40,proxy
 ip6-cidr,2605:9e40:8000::/38,proxy
 ip6-cidr,2606:40:203c:8000::/54,proxy
 ip6-cidr,2606:40:214b:2000::/54,proxy
+ip6-cidr,2606:40:2393:4c00::/54,proxy
+ip6-cidr,2606:40:3:3800::/54,proxy
+ip6-cidr,2606:40:67:2c00::/54,proxy
 ip6-cidr,2606:54c0:4670::/45,proxy
 ip6-cidr,2606:54c1:1:3f6::/64,proxy
 ip6-cidr,2606:54c3:0:101::/64,proxy
@@ -164,4 +171,3 @@ ip6-cidr,2a09:bac5:4718::/45,proxy
 ip6-cidr,2a09:bac6:4718::/45,proxy
 ip6-cidr,2a0b:4e07:3:6590::/60,proxy
 ip6-cidr,2a0e:ad80::/29,proxy
-ip6-cidr,2a14:67c2:832::/48,proxy
