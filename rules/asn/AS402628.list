@@ -2,12 +2,12 @@
 # Unsupported entries: 0; see reports/
 ip-cidr,130.12.18.0/24,proxy
 ip-cidr,155.117.4.0/24,proxy
-ip-cidr,156.9.160.0/23,proxy
+ip-cidr,156.9.160.0/24,proxy
 ip-cidr,156.9.162.0/24,proxy
 ip-cidr,167.148.164.0/24,proxy
 ip-cidr,168.222.39.0/24,proxy
 ip-cidr,187.5.0.0/23,proxy
-ip-cidr,187.5.4.0/24,proxy
+ip-cidr,187.5.4.0/23,proxy
 ip-cidr,200.180.160.0/24,proxy
 ip-cidr,200.180.162.0/23,proxy
 ip-cidr,200.180.165.0/24,proxy
@@ -39,7 +39,6 @@ ip6-cidr,2602:f864:21d::/48,proxy
 ip6-cidr,2602:f864:21e::/47,proxy
 ip6-cidr,2602:f864:220::/48,proxy
 ip6-cidr,2602:f864:222::/48,proxy
-ip6-cidr,2602:f864:226::/47,proxy
 ip6-cidr,2602:f864:22e::/48,proxy
 ip6-cidr,2602:f864:230::/44,proxy
 ip6-cidr,2602:f864:240::/47,proxy
@@ -49,7 +48,10 @@ ip6-cidr,2602:f864:248::/45,proxy
 ip6-cidr,2602:f864:250::/44,proxy
 ip6-cidr,2602:f864:260::/43,proxy
 ip6-cidr,2602:f864:280::/41,proxy
-ip6-cidr,2602:f864:300::/40,proxy
+ip6-cidr,2602:f864:310::/44,proxy
+ip6-cidr,2602:f864:320::/43,proxy
+ip6-cidr,2602:f864:340::/42,proxy
+ip6-cidr,2602:f864:380::/41,proxy
 ip6-cidr,2602:f864:4000::/34,proxy
 ip6-cidr,2602:f864:400::/38,proxy
 ip6-cidr,2602:f864:8000::/33,proxy

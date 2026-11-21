@@ -1,6 +1,7 @@
 # Source: MetaCubeX/meta-rules-dat/sing/asn/AS203.json
 # Unsupported entries: 0; see reports/
 ip-cidr,128.177.179.0/24,proxy
+ip-cidr,139.177.127.0/24,proxy
 ip-cidr,143.112.128.0/18,proxy
 ip-cidr,143.112.192.0/19,proxy
 ip-cidr,143.112.255.0/24,proxy
@@ -15,6 +16,7 @@ ip-cidr,143.199.96.0/24,proxy
 ip-cidr,148.59.168.0/23,proxy
 ip-cidr,149.21.0.0/16,proxy
 ip-cidr,156.42.128.0/18,proxy
+ip-cidr,156.42.192.0/20,proxy
 ip-cidr,156.42.208.0/21,proxy
 ip-cidr,156.42.224.0/19,proxy
 ip-cidr,156.42.32.0/19,proxy
@@ -24,8 +26,6 @@ ip-cidr,161.209.111.0/24,proxy
 ip-cidr,161.209.192.0/19,proxy
 ip-cidr,161.209.225.0/24,proxy
 ip-cidr,161.209.96.0/21,proxy
-ip-cidr,161.7.129.0/24,proxy
-ip-cidr,161.7.38.0/24,proxy
 ip-cidr,170.22.90.0/24,proxy
 ip-cidr,170.46.0.0/16,proxy
 ip-cidr,185.151.67.0/24,proxy
@@ -45,12 +45,11 @@ ip-cidr,206.203.112.0/21,proxy
 ip-cidr,206.203.120.0/23,proxy
 ip-cidr,206.203.122.0/24,proxy
 ip-cidr,206.203.124.0/22,proxy
-ip-cidr,206.203.64.0/24,proxy
-ip-cidr,206.203.66.0/24,proxy
-ip-cidr,206.203.68.0/22,proxy
+ip-cidr,206.203.64.0/21,proxy
 ip-cidr,206.203.72.0/24,proxy
 ip-cidr,206.203.75.0/24,proxy
 ip-cidr,206.203.76.0/22,proxy
+ip-cidr,206.203.80.0/24,proxy
 ip-cidr,206.203.82.0/23,proxy
 ip-cidr,206.203.84.0/22,proxy
 ip-cidr,206.203.94.0/23,proxy

@@ -1,6 +1,11 @@
 # Source: MetaCubeX/meta-rules-dat/sing/asn/AS22394.json
 # Unsupported entries: 0; see reports/
-ip-cidr,141.207.0.0/16,proxy
+ip-cidr,141.207.0.0/17,proxy
+ip-cidr,141.207.128.0/18,proxy
+ip-cidr,141.207.192.0/19,proxy
+ip-cidr,141.207.224.0/20,proxy
+ip-cidr,141.207.240.0/21,proxy
+ip-cidr,141.207.252.0/22,proxy
 ip-cidr,151.144.0.0/16,proxy
 ip-cidr,166.147.0.0/18,proxy
 ip-cidr,168.201.0.0/19,proxy
@@ -151,7 +156,13 @@ ip-cidr,174.254.0.0/20,proxy
 ip-cidr,174.254.96.0/19,proxy
 ip-cidr,174.255.224.0/20,proxy
 ip-cidr,174.38.0.0/15,proxy
-ip-cidr,174.40.0.0/15,proxy
+ip-cidr,174.40.0.0/16,proxy
+ip-cidr,174.41.0.0/17,proxy
+ip-cidr,174.41.128.0/18,proxy
+ip-cidr,174.41.192.0/19,proxy
+ip-cidr,174.41.224.0/20,proxy
+ip-cidr,174.41.240.0/21,proxy
+ip-cidr,174.41.252.0/22,proxy
 ip-cidr,174.42.180.0/22,proxy
 ip-cidr,174.42.184.0/21,proxy
 ip-cidr,174.42.192.0/18,proxy
@@ -356,7 +367,21 @@ ip-cidr,97.6.0.0/16,proxy
 ip-cidr,97.7.192.0/18,proxy
 ip-cidr,97.9.0.0/16,proxy
 ip-cidr,98.104.0.0/14,proxy
-ip6-cidr,2001:4888::/32,proxy
+ip6-cidr,2001:4888:8000::/44,proxy
+ip6-cidr,2001:4888:8010::/45,proxy
+ip6-cidr,2001:4888:801a::/47,proxy
+ip6-cidr,2001:4888:801c::/46,proxy
+ip6-cidr,2001:4888:8020::/43,proxy
+ip6-cidr,2001:4888:8040::/42,proxy
+ip6-cidr,2001:4888:8080::/41,proxy
+ip6-cidr,2001:4888:8100::/40,proxy
+ip6-cidr,2001:4888:8200::/39,proxy
+ip6-cidr,2001:4888:8400::/38,proxy
+ip6-cidr,2001:4888:8800::/37,proxy
+ip6-cidr,2001:4888:9000::/36,proxy
+ip6-cidr,2001:4888::/33,proxy
+ip6-cidr,2001:4888:a000::/35,proxy
+ip6-cidr,2001:4888:c000::/34,proxy
 ip6-cidr,2600:1000:8000::/36,proxy
 ip6-cidr,2600:1000:9010::/44,proxy
 ip6-cidr,2600:1000:9020::/43,proxy
