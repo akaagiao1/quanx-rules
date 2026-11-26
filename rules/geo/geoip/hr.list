@@ -28,7 +28,6 @@ ip-cidr,104.28.215.120/31,proxy
 ip-cidr,104.28.247.117/32,proxy
 ip-cidr,104.28.247.118/31,proxy
 ip-cidr,104.28.247.120/31,proxy
-ip-cidr,104.28.60.40/31,proxy
 ip-cidr,104.28.60.44/31,proxy
 ip-cidr,104.28.98.8/31,proxy
 ip-cidr,104.29.203.216/31,proxy
@@ -97,7 +96,6 @@ ip-cidr,140.248.18.24/31,proxy
 ip-cidr,140.248.34.112/30,proxy
 ip-cidr,140.248.36.130/31,proxy
 ip-cidr,140.248.36.132/31,proxy
-ip-cidr,140.248.56.97/32,proxy
 ip-cidr,140.248.57.97/32,proxy
 ip-cidr,140.248.58.97/32,proxy
 ip-cidr,140.248.59.97/32,proxy
@@ -214,8 +212,6 @@ ip-cidr,157.23.248.58/32,proxy
 ip-cidr,158.173.108.0/23,proxy
 ip-cidr,159.234.26.128/25,proxy
 ip-cidr,159.255.148.0/24,proxy
-ip-cidr,160.25.104.104/32,proxy
-ip-cidr,160.25.105.104/32,proxy
 ip-cidr,161.53.0.0/16,proxy
 ip-cidr,162.120.136.8/31,proxy
 ip-cidr,162.120.187.105/32,proxy
@@ -570,6 +566,7 @@ ip-cidr,212.91.96.0/19,proxy
 ip-cidr,212.92.192.0/19,proxy
 ip-cidr,213.109.207.0/24,proxy
 ip-cidr,213.111.191.0/24,proxy
+ip-cidr,213.130.68.0/23,proxy
 ip-cidr,213.147.96.0/19,proxy
 ip-cidr,213.149.32.0/19,proxy
 ip-cidr,213.155.156.56/29,proxy
@@ -591,6 +588,7 @@ ip-cidr,213.253.127.0/24,proxy
 ip-cidr,213.253.96.0/23,proxy
 ip-cidr,213.253.99.0/24,proxy
 ip-cidr,213.5.56.0/21,proxy
+ip-cidr,213.86.220.103/32,proxy
 ip-cidr,217.14.208.0/20,proxy
 ip-cidr,217.217.237.0/24,proxy
 ip-cidr,217.68.80.0/20,proxy
@@ -661,7 +659,7 @@ ip-cidr,45.87.24.0/22,proxy
 ip-cidr,45.95.168.0/23,proxy
 ip-cidr,45.95.171.0/24,proxy
 ip-cidr,46.151.128.0/21,proxy
-ip-cidr,46.163.0.0/22,proxy
+ip-cidr,46.163.0.0/20,proxy
 ip-cidr,46.163.51.0/24,proxy
 ip-cidr,46.163.53.0/24,proxy
 ip-cidr,46.163.58.0/24,proxy
@@ -713,18 +711,6 @@ ip-cidr,82.158.184.0/21,proxy
 ip-cidr,82.193.192.0/19,proxy
 ip-cidr,82.21.209.0/24,proxy
 ip-cidr,82.21.221.0/24,proxy
-ip-cidr,82.214.104.0/22,proxy
-ip-cidr,82.214.108.0/24,proxy
-ip-cidr,82.214.109.0/25,proxy
-ip-cidr,82.214.109.128/26,proxy
-ip-cidr,82.214.109.192/28,proxy
-ip-cidr,82.214.109.208/31,proxy
-ip-cidr,82.214.109.210/32,proxy
-ip-cidr,82.214.109.213/32,proxy
-ip-cidr,82.214.109.214/31,proxy
-ip-cidr,82.214.109.216/29,proxy
-ip-cidr,82.214.109.224/27,proxy
-ip-cidr,82.214.110.0/23,proxy
 ip-cidr,82.214.120.0/24,proxy
 ip-cidr,82.214.76.0/23,proxy
 ip-cidr,82.214.78.0/24,proxy
@@ -771,6 +757,7 @@ ip-cidr,87.81.246.160/31,proxy
 ip-cidr,87.81.247.160/31,proxy
 ip-cidr,87.81.248.160/31,proxy
 ip-cidr,87.81.252.160/31,proxy
+ip-cidr,87.81.254.208/31,proxy
 ip-cidr,88.207.0.0/17,proxy
 ip-cidr,89.164.0.0/16,proxy
 ip-cidr,89.17.0.0/19,proxy
@@ -784,6 +771,9 @@ ip-cidr,89.249.96.0/20,proxy
 ip-cidr,89.34.1.0/24,proxy
 ip-cidr,9.246.128.0/23,proxy
 ip-cidr,9.246.174.0/23,proxy
+ip-cidr,90.96.187.212/30,proxy
+ip-cidr,90.96.187.216/30,proxy
+ip-cidr,90.96.187.220/32,proxy
 ip-cidr,91.132.12.0/24,proxy
 ip-cidr,91.134.214.132/30,proxy
 ip-cidr,91.142.139.0/24,proxy
@@ -832,6 +822,10 @@ ip-cidr,93.170.240.0/23,proxy
 ip-cidr,94.103.176.0/24,proxy
 ip-cidr,94.119.3.0/29,proxy
 ip-cidr,94.127.23.0/24,proxy
+ip-cidr,94.192.64.208/31,proxy
+ip-cidr,94.192.66.208/31,proxy
+ip-cidr,94.192.68.208/31,proxy
+ip-cidr,94.192.70.208/31,proxy
 ip-cidr,94.192.72.210/31,proxy
 ip-cidr,94.192.74.210/31,proxy
 ip-cidr,94.192.76.210/31,proxy
@@ -1029,7 +1023,6 @@ ip6-cidr,2a04:4e41:1402:7000::/52,proxy
 ip6-cidr,2a04:4e41:1415::/48,proxy
 ip6-cidr,2a04:4e41:1802:8000::/52,proxy
 ip6-cidr,2a04:4e41:181f::/48,proxy
-ip6-cidr,2a04:4e41:4016:1000::/52,proxy
 ip6-cidr,2a04:4e41:4026:1000::/52,proxy
 ip6-cidr,2a04:4e41:4036:1000::/52,proxy
 ip6-cidr,2a04:4e41:4046:1000::/52,proxy
@@ -1051,6 +1044,12 @@ ip6-cidr,2a04:4e41:70:a000::/55,proxy
 ip6-cidr,2a04:4e41:80:5d00::/56,proxy
 ip6-cidr,2a04:4e41:84:5d00::/56,proxy
 ip6-cidr,2a04:4e41:88:5d00::/56,proxy
+ip6-cidr,2a04:4e41:90:5c00::/56,proxy
+ip6-cidr,2a04:4e41:92:5c00::/56,proxy
+ip6-cidr,2a04:4e41:94:5c00::/56,proxy
+ip6-cidr,2a04:4e41:98:5c00::/56,proxy
+ip6-cidr,2a04:4e41:9c:5c00::/56,proxy
+ip6-cidr,2a04:8280:1000::/36,proxy
 ip6-cidr,2a04:900::/29,proxy
 ip6-cidr,2a04:a7c0::/29,proxy
 ip6-cidr,2a05:1840::/29,proxy

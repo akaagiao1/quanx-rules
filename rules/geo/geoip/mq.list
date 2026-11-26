@@ -25,8 +25,6 @@ ip-cidr,109.62.0.0/20,proxy
 ip-cidr,109.62.104.0/22,proxy
 ip-cidr,109.62.120.0/21,proxy
 ip-cidr,109.62.48.0/21,proxy
-ip-cidr,109.62.64.0/23,proxy
-ip-cidr,109.62.67.0/24,proxy
 ip-cidr,109.62.68.0/24,proxy
 ip-cidr,109.62.69.0/27,proxy
 ip-cidr,109.62.69.128/25,proxy
@@ -37,7 +35,6 @@ ip-cidr,136.23.40.210/32,proxy
 ip-cidr,136.23.8.214/32,proxy
 ip-cidr,140.248.14.44/31,proxy
 ip-cidr,140.248.46.122/31,proxy
-ip-cidr,140.248.56.149/32,proxy
 ip-cidr,140.248.57.149/32,proxy
 ip-cidr,140.248.58.149/32,proxy
 ip-cidr,140.248.59.149/32,proxy
@@ -96,7 +93,7 @@ ip-cidr,45.62.191.160/28,proxy
 ip-cidr,46.16.205.0/24,proxy
 ip-cidr,46.238.144.0/20,proxy
 ip-cidr,46.238.160.0/21,proxy
-ip-cidr,46.238.180.0/22,proxy
+ip-cidr,46.238.176.0/21,proxy
 ip-cidr,46.238.188.0/22,proxy
 ip-cidr,5.102.73.0/24,proxy
 ip-cidr,5.102.74.0/24,proxy
@@ -153,14 +150,9 @@ ip-cidr,90.82.62.0/23,proxy
 ip-cidr,90.82.66.0/23,proxy
 ip-cidr,90.82.68.0/22,proxy
 ip-cidr,90.82.72.0/21,proxy
+ip-cidr,90.96.176.52/32,proxy
 ip-cidr,92.144.0.0/19,proxy
-ip-cidr,92.144.128.0/21,proxy
-ip-cidr,92.144.137.0/24,proxy
-ip-cidr,92.144.138.0/23,proxy
-ip-cidr,92.144.140.0/22,proxy
-ip-cidr,92.144.144.0/20,proxy
-ip-cidr,92.144.160.0/19,proxy
-ip-cidr,92.144.192.0/18,proxy
+ip-cidr,92.144.128.0/17,proxy
 ip-cidr,92.144.32.0/20,proxy
 ip-cidr,92.144.56.0/21,proxy
 ip-cidr,92.144.64.0/18,proxy
@@ -218,7 +210,7 @@ ip6-cidr,2a02:26f7:b444:4000::/64,proxy
 ip6-cidr,2a02:26f7:b445:4000::/64,proxy
 ip6-cidr,2a02:26f7:b448::/48,proxy
 ip6-cidr,2a02:26f7:b449:4000::/64,proxy
-ip6-cidr,2a02:26f7:b44c:4000::/64,proxy
+ip6-cidr,2a02:26f7:b44c::/48,proxy
 ip6-cidr,2a02:26f7:b44d:4000::/64,proxy
 ip6-cidr,2a02:7460::/32,proxy
 ip6-cidr,2a02:ccc0::/29,proxy
@@ -227,7 +219,6 @@ ip6-cidr,2a03:e200::/32,proxy
 ip6-cidr,2a04:11c0::/29,proxy
 ip6-cidr,2a04:4e41:3a3a::/48,proxy
 ip6-cidr,2a04:4e41:3e1e::/48,proxy
-ip6-cidr,2a04:4e41:4019:5000::/52,proxy
 ip6-cidr,2a04:4e41:4029:5000::/52,proxy
 ip6-cidr,2a04:4e41:4039:5000::/52,proxy
 ip6-cidr,2a04:4e41:4049:5000::/52,proxy
