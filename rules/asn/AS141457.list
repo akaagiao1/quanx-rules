@@ -1,4 +1,19 @@
 # Source: MetaCubeX/meta-rules-dat/sing/asn/AS141457.json
 # Unsupported entries: 0; see reports/
 ip-cidr,103.159.236.0/23,proxy
-ip6-cidr,2401:4d60::/32,proxy
+ip6-cidr,2401:4d60:1000::/36,proxy
+ip6-cidr,2401:4d60:100::/40,proxy
+ip6-cidr,2401:4d60:10::/48,proxy
+ip6-cidr,2401:4d60:12::/47,proxy
+ip6-cidr,2401:4d60:14::/46,proxy
+ip6-cidr,2401:4d60:18::/45,proxy
+ip6-cidr,2401:4d60:2000::/35,proxy
+ip6-cidr,2401:4d60:200::/39,proxy
+ip6-cidr,2401:4d60:20::/43,proxy
+ip6-cidr,2401:4d60:4000::/34,proxy
+ip6-cidr,2401:4d60:400::/38,proxy
+ip6-cidr,2401:4d60:40::/42,proxy
+ip6-cidr,2401:4d60:8000::/33,proxy
+ip6-cidr,2401:4d60:800::/37,proxy
+ip6-cidr,2401:4d60:80::/41,proxy
+ip6-cidr,2401:4d60::/44,proxy
