@@ -1,6 +1,6 @@
 # QuanX 全量分类目录
 
-上游快照：`2f927fd185c9ab3791a0a918814dc44f8f6cba3e`
+上游快照：`12f5451acf88c4b7e49ec0cca0b20f9cde36bfa7`
 
 所有文件默认策略为 `proxy`；订阅时用 `force-policy` 指定自己的策略组。
 partial 表示含无法转换的域名正则；unsupported-only 和 empty 不提供空订阅。
