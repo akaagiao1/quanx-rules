@@ -1,6 +1,6 @@
 # Surge 全量分类目录
 
-上游快照：`2f927fd185c9ab3791a0a918814dc44f8f6cba3e`
+上游快照：`12f5451acf88c4b7e49ec0cca0b20f9cde36bfa7`
 
 规则文件不含策略名；在配置的 `RULE-SET,URL,策略` 行指定策略。
 partial 表示含无法转换的域名正则；unsupported-only 和 empty 不提供空订阅。
